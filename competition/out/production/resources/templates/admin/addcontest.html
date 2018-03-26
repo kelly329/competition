@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="admin/_fragments::head">
+</head>
+<body class="gray-bg top-navigation" style="min-height: 450px;">
+<div th:replace="admin/_fragments::menu"></div>
+<div class="setting-top row" style="margin-left: 0;">
+    <div class="col-lg-6 col-lg-offset-3 top_title" style="margin-top:20px;">
+        <p>添加比赛信息</p>
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight article content-margin">
+    <div class="row">
+        <div class="ibox">
+            <div class="ibox-content">
+                <form id="form" action="#" th:action="@{/admin/contestlist}" method="post"
+                      enctype="multipart/form-data" th:object="${contest}">
+                    <input type="hidden" name="id" th:value="*{id}"/>
+                    <div class="text-center article-title">
+
+                        <!--<hr>-->
+                        <!--上传图片-->
+                        <div class="form-group">
+                            <div class="col-lg-1 col-lg-offset-2 content-center">
+                                <span class="label-name label_title">图片:</span>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="uploadimage">
+                                    <!--<a class="uploadBtn_img">-->
+                                    <!--<input type="file" id="file" name="imgsrc"/>-->
+                                    <!--</a>-->
+                                    <!--<img src="{$info.picurl}" height="250" style="max-width: 500px"-->
+                                    <!--id="preview"/>-->
+                                    <img th:src="*{picurl}" height="250" style="max-width: 500px"
+                                         id="preview"/>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+
+                    </div>
+                    <!--<input type="text" class="hidden" value="{$info.id}" name="id" >-->
+                    <!--<if condition="$info['picurl']"></if>-->
+                    <div class="row">
+                        <div class="form-groups">
+                            <label class="col-lg-2 col-lg-offset-1 control-label label_title">
+                                <!--<if condition="!empty($info['picurl'])"><span class="text-navy">已有图片</span></if>-->
+                                <span>图片来源</span>
+                            </label>
+
+                            <div class="col-lg-7">
+                                <!--<input type="file" id="imgsrc" name="picurl" accept="image/*"/>-->
+                                <input type="text" class="form-control" th:value="*{picurl}"
+                                       id="picurl" name="picurl" required="required" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-groups">
+                            <label class="col-lg-2 col-lg-offset-1 control-label label_title">是否推荐：</label>
+                            <div class="col-lg-7">
+                                <input type="checkbox" class="form-control" th:checked="*{isrecommend}"
+                                       id="isrecommend" name="isrecommend"  required="required" />
+                                <label for="isrecommend">推荐</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-groups">
+                            <label class="col-lg-2 col-lg-offset-1 control-label label_title">比赛名称：</label>
+                            <div class="col-lg-7">
+                                <input type="text" class="form-control" th:value="*{title}"
+                                       id="input_title" name="title" required="required" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-groups">
+                            <label class="col-lg-2 col-lg-offset-1 control-label label_title">比赛开始时间:</label>
+                            <div class="col-lg-6">
+                                <input type="date" class="new_form-control" th:value="*{startTime}"
+                                       id="input_time_year" name="starttime" required="required" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-groups">
+                            <label class="col-lg-2 col-lg-offset-1 control-label label_title">报名截止时间:</label>
+                            <div class="col-lg-6">
+                                <input type="date" class="new_form-control" th:value="*{endTime}"
+                                       id="input_endtime" name="endtime" required="required" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-groups">
+                            <label class="col-lg-2 col-lg-offset-1 control-label label_title">信息来源：</label>
+                            <div class="col-lg-5">
+                                <input type="text" class="form-control" th:value="*{sourceLink}"
+                                       id="sourcename" name="sourcename" required="required" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-groups">
+                            <label class="col-lg-2 col-lg-offset-1 control-label label_title">报名地址:</label>
+                            <div class="col-lg-5">
+                                <input type="text" class="form-control"
+                                      th:value="*{sourceLink}"
+                                       id="sourceLink" name="sourceLink" required="required" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-groups">
+                            <label class="col-lg-2 col-lg-offset-1 control-label label_title">主要类型:</label>
+                            <div class="col-lg-7">
+                                <select id="maintype" name="maintype" required="required" >
+                                    <option value="">请选择</option>
+                                    <option th:value="1" >校内</option>
+                                    <option th:value="2">校外</option>
+                                </select>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-groups">
+                            <label class="col-lg-2 col-lg-offset-1 control-label label_title">选择比赛分类</label>
+                            <div class="col-lg-7">
+                                <select id="type" name="type.id" required="required">
+                                <option value="" >请选择</option>
+                                    <option th:each="type:${types}" th:value="${type.id}" th:text="${type.name}"></option>
+                                </select>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-groups-2">
+                            <label class="col-lg-2 col-lg-offset-1 control-label label_title">比赛奖项:</label>
+                            <div class="col-lg-7">
+                                <textarea placeholder="以比赛奖项与奖品并排的方式编写。" name="awards"
+                                          id="awards" required="required" th:text="*{awards}"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-groups-2">
+                            <label class="col-lg-2 col-lg-offset-1 control-label label_title">比赛内容:</label>
+                            <div class="col-lg-7">
+                                <textarea id="content" placeholder="请填写该比赛具体内容。" name="content" th:text="*{content}"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin-top: 70px;">
+                        <div class="col-lg-3 col-lg-offset-6">
+                            <input type="submit" class="btn btn-primary " value="保存" id="save"/>
+                            <span class="save_sucess"> 保存成功</span>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div  class="navbar-fixed-bottom'" th:replace="admin/_fragments::footer"></div>
+<script type="text/javascript" charset="utf-8" src="/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="/ueditor/ueditor.all.min.js"> </script>
+<script type="text/javascript" charset="utf-8" src="/ueditor/lang/zh-cn/zh-cn.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#imgsrc").change(function () {
+            var objUrl = getObjectURL(this.files[0]);
+            if (objUrl) {
+                $("#preview").attr("src", objUrl);
+            }
+        });
+
+        function getObjectURL(file) {
+            var url = null;
+            if (window.createObjectURL != undefined) { // basic
+                url = window.createObjectURL(file);
+            } else if (window.URL != undefined) { // mozilla(firefox)
+                url = window.URL.createObjectURL(file);
+            } else if (window.webkitURL != undefined) { // webkit or chrome
+                url = window.webkitURL.createObjectURL(file);
+            }
+            return url;
+        }
+    });
+
+</script>
+<script type="text/javascript">
+
+    //实例化编辑器
+    //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
+    UE.getEditor('content',{initialFrameWidth:800,initialFrameHeight:400,});
+    UE.getEditor('awards',{initialFrameWidth:800,initialFrameHeight:400,});
+    $(".btype").hide();
+    $(".btype").eq(0).show();
+    $("#atype input").click(function(){
+        var i=$(this).index();
+        $(".btype").hide();
+        $(".btype").eq(i).show();
+    });
+
+</script>
+</body>
+</html>

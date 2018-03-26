@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="admin/_fragments::head">
+</head>
+<body class="gray-bg top-navigation" style="min-height: 450px;">
+<div th:replace="admin/_fragments::menu"></div>
+<div class="wrapper wrapper-content animated fadeInDown">
+
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <h2>分类信息</h2>
+            <hr/>
+            <br/>
+
+            <form class="form-horizontal" method="post" enctype="multipart/form-data"
+                  action=""
+                  th:object="${type}"
+                  th:action="*{id}==null ? @{/admin/types} : @{/admin/types/{id}(id=*{id})}"
+            >
+                <input type="hidden" name="id" th:value="*{id}" />
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">分类名称</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="name" th:value="*{name}" />
+                    </div>
+                </div>
+                <!--/*/
+                 <div class="ui negative message" th:if="${#fields.hasErrors('name')}">
+                 <i class="close icon"></i>
+                 <div class="header">验证失败</div>
+                 <p th:errors="*{name}">提交信息不符合规则</p>
+                 </div>
+                /*/-->
+                <div class="form-group">
+                    <div class="col-sm-offset-11 col-sm-1">
+
+                        <button type="submit" class="btn btn-primary" style="width:100%">提交</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+<div  class="navbar-fixed-bottom'" th:replace="admin/_fragments::footer"></div>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,368 @@
+body {
+    min-width: 500px;
+}
+
+.new_file-box {
+    float: left;
+
+    width: 220px;
+}
+
+.file .new_image {
+    overflow: hidden;
+
+    height: 250px;
+}
+
+.new_image {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 12.5px;
+}
+
+.uploadBtn_img {
+    font-size: 100px;
+
+    position: absolute;
+    top: 0;
+
+    width: 175px;
+    height: 250px;
+
+    opacity: 0;
+}
+
+.judge,
+.radio,
+.multiselect {
+    display: none;
+}
+
+.new_row {
+    margin-top: 20px;
+}
+
+.content {
+    min-height: 500px;
+    margin-top: 20px;
+
+    background-color: white;
+}
+
+.row_margin {
+    margin-top: 40px;
+}
+
+.uploadimage_an {
+    position: relative;
+
+    float: left;
+
+    width: 84px;
+    height: 82px;
+
+    color: #60686b;
+    background: url(../img/webuploader.png) no-repeat;
+}
+
+.uploadBtn_img_an {
+    position: relative;
+
+    display: block;
+
+    width: 80px;
+    height: 80px;
+}
+
+.uploadBtn_img_an input {
+    position: absolute;
+    z-index: 100;
+
+    width: 80px;
+    height: 80px;
+}
+
+.uploadimage_an img {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.text-content {
+    width: 90%;
+    min-height: 480px;
+    margin-left: 5%;
+}
+
+.upload_btn {
+    line-height: 30px;
+
+    position: relative;
+
+    width: 100px;
+    height: 40px;
+}
+
+.text-content {
+    padding-top: 20px;
+}
+
+.new_list {
+    font-size: 18px;
+}
+
+.size {
+    margin-left: 10px;
+}
+
+.upload_btn input {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 40px;
+
+    opacity: 0;
+}
+
+.uploadBtn_img input {
+    font-size: 100px;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 175px;
+    height: 250px;
+
+    opacity: 0;
+}
+
+.uploadimage_an input:hover {
+    cursor: pointer;
+}
+
+.uploadBtn_img input:hover {
+    cursor: pointer;
+}
+
+.uploadimage_an input {
+    opacity: 0;
+}
+
+.uploadimage {
+    position: relative;
+
+    float: left;
+    width: 177px;
+    height: 252px;
+
+    color: #60686b;
+    background: url(../img/webuploader.png) no-repeat;
+}
+
+.label_title {
+    font-size: 14px;
+    font-weight: 700;
+
+    text-align: right;
+
+    color: #07111b;
+}
+
+.form-groups-2 {
+    margin-top: 50px;
+}
+
+.unedit {
+    transition: background-color .5s;
+
+    background-color: #eee !important;
+}
+
+.save_sucess {
+    font-size: 15px;
+
+    display: none;
+
+    text-align: center;
+}
+
+.new_form-control {
+    font-size: 14px;
+
+    display: inline;
+
+    width: 80%;
+    padding: 6px 12px;
+
+    -webkit-transition: border-color .15s ease-in-out 0s, box-shadow .15s ease-in-out 0s;
+    transition: border-color .15s ease-in-out 0s, box-shadow .15s ease-in-out 0s;
+
+    color: inherit;
+    border: 1px solid #e5e6e7;
+    border-radius: 1px;
+    background-color: #fff;
+    background-image: none;
+}
+
+.label_right {
+    line-height: 42px;
+
+    float: right;
+
+    height: 42px;
+}
+
+.setting-top {
+    width: 100%;
+    height: 160px;
+
+    background: url(../img/setting_topbk.png);
+}
+
+.setting-top .top_title {
+    line-height: 120px;
+}
+
+.setting-top .top_title p {
+    font-size: 30px;
+    font-weight: 900;
+
+    color: black;
+}
+
+.eidting {
+    transition: background-color .5s;
+
+    background-color: white;
+}
+
+.form-groups {
+    height: 42px;
+    margin-top: 20px;
+}
+
+.form-groups-2 {
+    height: 150px;
+    margin-top: 40px;
+}
+
+.label-name {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 40px;
+
+    float: left;
+
+    width: 40px;
+    height: 40px;
+
+    text-align: right;
+
+    color: #07111b;
+}
+
+.clear {
+    clear: both;
+}
+
+/*任务管理列表页*/
+.clear-a,
+.clear-a:hover,
+.clear-a:visited,
+.clear-a:link,
+.clear-a:active {
+    color: #444;
+}
+
+.forum-sub-title {
+    font-size: 12px;
+}
+
+.ibox-content .ibox-nav {
+    width: 60%;
+    margin: auto;
+
+    background-color: #fff;
+}
+
+.ibox-nav ul {
+    display: flex;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.ibox-content .ibox-nav .ibox-nav-item {
+    font-size: 14px;
+    line-height: 40px;
+
+    height: 40px;
+
+    list-style: none;
+
+    text-align: center;
+
+    flex: 1;
+}
+
+.ibox-item-selected,
+.ibox-nav-item:hover {
+    user-select: none;
+
+    color: rgb(27, 179, 148);
+    border-bottom: 2px solid rgb(27, 179, 148);
+}
+
+@media (max-width: 780px) {
+    .sm-hidden {
+        display: none;
+    }
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    color: #333;
+    background-color: #fff !important;
+    background-image: none;
+}
+
+input:-webkit-autofill:hover {
+    /* style code */
+}
+
+input:-webkit-autofill:focus {
+    /* style code */
+}
+
+/*用户缴费*/
+.paycheck-item {
+    width: 40%;
+    height: 100px;
+    margin: 0 auto;
+
+    border: 1px solid red;
+}
+
+/*用户意见建议反馈*/
+#level-tips {
+    display: inline-block;
+    color: #1ab394;
+}
+
+.tag-selected {
+    background: #1ab394 !important;
+    color: white !important;
+}
+
+.bookimg {
+    height: 250px;
+    width: 175px;
+}
+
+/*帖子下面的副标题的span标签*/

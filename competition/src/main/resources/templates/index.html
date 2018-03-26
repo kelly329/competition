@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>校园比赛信息推荐网首页</title>
+    <meta http-equiv="pragma" content="no-cache"/>
+    <meta http-equiv="cache-control" content="no-cache"/>
+    <meta http-equiv="expires" content="0"/>
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3"/>
+    <meta http-equiv="description" content="This is my page"/>
+
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/schedule.js"></script>
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_234130_nem7eskcrkpdgqfr.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css"/>
+    <link rel="stylesheet" href="/css/xnxq.css"/>
+    <link rel="stylesheet" href="/css/date.css"/>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color: #7d0022;
+
+        }
+
+        /*	#schedule-box{
+                width: 320px;
+                margin: 0 auto;
+                padding: 35px 20px;
+                font-size: 13px;
+            }*/
+        .schedule-hd {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 15px;
+        }
+
+        .today {
+            flex: 1;
+            text-align: center;
+        }
+
+        .ul-box {
+            overflow: hidden;
+        }
+
+        .ul-box > li {
+            float: left;
+            width: 14.28%;
+            text-align: center;
+            padding: 5px 0;
+        }
+
+        .other-month {
+            color: #999999;
+        }
+
+        .current-month {
+            color: #333333;
+        }
+
+        .today-style {
+            border-radius: 50%;
+            background: #58d321;
+        }
+
+        .arrow {
+            cursor: pointer;
+        }
+
+        .dayStyle {
+            display: inline-block;
+            width: 35px;
+            height: 25px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 25px;
+            cursor: pointer;
+        }
+
+        .current-month > .dayStyle:hover {
+            background: #00BDFF;
+            color: #ffffff;
+        }
+
+        .today-flag {
+            background: #CE0000;
+            color: #fff;
+        }
+
+        .boxshaw {
+            box-shadow: 2px 2px 15px 2px #e3e3e3;
+        }
+
+        .selected-style {
+            background: #00BDFF;
+            color: #ffffff;
+        }
+
+        #h3Ele {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .panel-success {
+            border-color: white;
+            -webkit-box-shadow: 0.7px 0.7px 0.7px 0.7px #333333;
+            -moz-box-shadow: 0.7px 0.7px 0.7px 0.7px #333333;
+        }
+        /*.line-limit-length {*/
+            /*overflow: hidden;*/
+            /*text-overflow: ellipsis;*/
+            /*white-space: nowrap; //文本不换行，这样超出一行的部分被截取，显示...*/
+        /*}*/
+        .ui.segments:last-child{
+            width:322px;
+        }
+        .ui.teal.segment:not(.inverted) {
+            border-top: 2px solid #d9534f;
+        }
+        .ui.basic.teal.label {
+            background-color: #FFF!important;
+            color: #d9534f!important;
+            border-color: #d9534f!important;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!--导航-->
+    <div th:replace="_fragments :: menu(1)" class="nav-box" style="margin-left: 10px">
+      <div class="container">
+        <div class="logo"><img src="/image/logo.png" /></div>
+        <div class="navbar">
+        <ul class="navbar-nav">
+        <li><a href="#" class="">首页</a></li>
+        <li ><a href="#" class="">校内比赛</a></li>
+        <li ><a href="#" class="">校外比赛</a></li>
+        <li><a href="#" class="">组队社区</a></li>
+            <li><a href="#" class="">推荐比赛</a></li>
+        </ul></div>
+        <form class="form-search">
+             <div class="search">
+                    <input class="input-search" type="text" />
+                 <button type="submit" class="search-btn">
+                     <img src="image/search.png" width="32px" height="32px"/></button>
+              </div> 
+        </form>
+        <!-- <a href="admin/login.html" class='adminlogin'>后台管理入口</a> -->
+       <!--  <div class="login relogin">
+          
+          <div class="l1"><a href="log.html">登录</a></div> -->
+          <!-- <div class="l2"><a href="reg.html">注册</a></div> -->
+             <!--  <a href="log.html" >[登录]</a><a href="register.html">[免费注册]</a>
+      
+        </div> -->
+        <div style="margin: 10px;">
+              <ul class="nav nav-pills">
+                  <li class="dropdown all-camera-dropdown" style="color: #000000">
+                      <a data-toggle="dropdown" href="#">
+                          <img src="image/facelog.jpg" width="50px" height="50px" style="border-radius: 50px;margin-left: 20px" />
+                          <b class="caret"></b>
+                      </a>
+                      <ul class="dropdown-menu">
+                          <li style="padding-top: 20px;padding-bottom: 10px;">
+                              <a href="#">
+                                  <span class="glyphicon glyphicon-user" style="color: rgb(212, 106, 64);margin-right: 10px;"></span>
+                                  我的主页
+                              </a>
+                          </li>
+                          <li style="padding-top: 10px;padding-bottom: 10px;">
+                              <a  href="https://www.baidu.com/">
+                                  <span class="glyphicon glyphicon-bookmark" style="color: rgb(212, 106, 64);margin-right: 10px;"></span>
+                                  关注的比赛
+                              </a>
+                          </li>
+                           <li style="padding-top: 10px;padding-bottom: 10px;">
+                              <a  href="#">
+                                  <span class="glyphicon glyphicon-heart" style="color: rgb(212, 106, 64);margin-right: 10px;"></span>
+                                  喜欢的比赛
+                              </a>
+                          </li>
+                          <li style="padding-top: 10px;padding-bottom: 10px;">
+                              <a href="#">
+                                  <span class="glyphicon glyphicon-star" style="color: rgb(212, 106, 64);margin-right: 10px;"></span>
+                                  点赞的比赛
+                              </a>
+                          </li>
+                          <li style="padding-top: 10px;padding-bottom: 10px;">
+                              <a href="#">
+                                  <span class="glyphicon glyphicon-envelope" style="color: rgb(212, 106, 64);margin-right: 10px;"></span>
+                                  发布的组队
+                              </a>
+                          </li>
+                          <li style="padding-top: 10px;padding-bottom: 10px;">
+                              <a href="#">
+                                  <span class="glyphicon glyphicon-cog" style="color: rgb(212, 106, 64);margin-right: 10px;"></span>
+                                  设置
+                              </a>
+                          </li>
+                          <li style="padding-top: 10px;padding-bottom: 20px;">
+                              <a href="#">
+                                  <span class="glyphicon glyphicon-log-out" style="color: rgb(212, 106, 64);margin-right: 10px;"></span>
+                                  退出
+                              </a>
+                          </li>
+                      </ul>
+                </li>
+            </ul>       
+        </div>
+      </div>
+    </div>
+
+<div class="container">
+    <!--轮播图-->
+    <div class="row" style="margin-right:0px;margin-left:0px; margin-bottom:20px">
+        <div id="myCarousel" class="carousel slide" style="width: 100%;height: 350px;">
+            <!-- 轮播（Carousel）指标 -->
+            <ol class="carousel-indicators" style="bottom:-30px">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <!-- 轮播(carousel)项目 -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img alt="First slide" src="/image/carousel_1.jpg" style="width: 100%;height: 380px;"/>
+                </div>
+                <div class="item">
+                    <img alt="Second slide" src="/image/carousel_2.jpg" style="width: 100%;height: 380px;"/>
+                </div>
+                <div class="item">
+                    <img alt="Third slide" src="/image/carousel_3.jpg" style="width: 100%;height: 380px;"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--轮播图结束-->
+
+    <div class="row" style="margin-top: 50px; margin-left:0px;">
+        <div class="col-md-8" style="margin-right: 50px">
+            <div class="row">
+                <div class="panel panel-success">
+                    <div class="panel-body">
+                        <div class="row">
+                            <h3 class="panel-title" style="margin-left: 20px;margin-bottom: 20px">
+                                <strong>最新比赛</strong>
+                                <sup>
+                                <img src="/image/new_v1@2x.png" style="width: 30px;height: 15px;"/>
+                                </sup>
+                            </h3>
+                        </div>
+                        <!--最新比赛信息展示-->
+
+                            <div class="row" th:each="contest:${contests}">
+                                <div class="col-md-6" >
+                                    <div class="row" >
+
+                                        <img alt="" src="/image/hot.png" style="margin-left: 50px"/>
+                                        <b style="margin-left: 3px;font-size: 16px;" th:text="${contest.title}"></b>
+                                    </div>
+                                    <div class="row">
+                                        <p style="margin-top: 10px;margin-left: 70px">类别：<span th:text="${contest.type.name}">平面设计</span> 开始时间：<span th:text="${contest.startTime}"></span></p>
+                                    </div>
+                                    <div class="row">
+                                        <!--<p style="margin-top: 5px;margin-left: 70px">竞赛简介</p>-->
+                                        <div class="line-limit-length" style="margin-left: 70px;width: auto"  th:utext="|${contest.content}......|">
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <img alt="" src="/image/comment_2x.png"
+                                             style="margin-top: 5px;margin-left: 70px;width: 20px; height: 20px;"/><span th:text="${contest.postnum}"></span>
+                                        <img alt="" src="/image/like_2x.png"
+                                             style="margin-top: 5px;margin-left: 70px;width: 20px; height: 20px;"/><span th:text="${contest.likenum}"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6" th:switch="${contest.maintype}">
+                                    <span>
+                                        <a th:case="1" th:href="@{/web/incondetail/{id}(id=${contest.id})}">
+                                        <img alt="" src="#" th:src="${contest.picurl}" style="margin-top: 17px;width: 350px; height: 160px;"/>
+                                    </a>
+                                    </span>
+                                    <span>
+                                        <a th:case="2" th:href="@{/web/offcontestdetail/{id}(id=${contest.id})}">
+                                        <img alt="" src="#" th:src="${contest.picurl}" style="margin-top: 17px;width: 350px; height: 160px;"/>
+                                    </a>
+                                    </span>
+
+                                </div>
+                            </div>
+
+
+                        <div class="row">
+                            <p class="text-right" style="margin-top: 17px;margin-right: 20px"><b>更多...</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="panel panel-success">
+                    <div class="panel-body">
+                        <div class="row">
+                            <h3 class="panel-title" style="margin-left: 20px;margin-bottom: 20px">
+                                <strong>最新组队</strong><sup><img src="/image/subsecond.png"
+                                                               style="width: 20px;height: 20px;"/></sup></h3>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <img alt="" src="/image/persion1.jpeg" style="width: 80px;height: 80px"/>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="row">
+                                    <font style="color: red;">LOGO大师</font>
+                                    <img alt="" src="/image/clock.png" style="margin-left: 20px;width: 11px;height: 11px"/>
+                                    <font style="color: #D0D0D0;font-size: 5px">2017.11.27</font>
+                                    <font style="color: #D0D0D0;font-size: 5px;margin-left: 8px">11:11:11</font>
+                                </div>
+                                <div class="row">
+                                    <font>校内微电影比赛，作品准备阶段，前期拍摄、后期影视剪辑 我们已经有了相关专业的同学了
+                                        拍摄设备基本齐全。现在还缺演员2名，男女校内微电影比赛，作品准备阶段，前期拍摄、后期影视剪辑 我们已经有了相关专业的同学了
+                                        拍摄设备基本齐全。现在还缺演员2名，男女校内微电影比赛，作品准备阶段，前期拍摄、后期影视剪辑 我们已经有了相关专业的同学了
+                                        拍摄设备基本齐全。现在还缺演员2名，男女</font>
+                                </div>
+                                <div class="row">
+                                    <img alt="" src="/image/contentimg.jpg" style="width: 350px;height: 150px" />
+                                </div>
+                                <div class="row">
+                                    <div style="margin-top: 20px;float: left;">
+                                        <img alt="" src="/image/comment_2x.png" style="width: 20px; height: 20px;"/>
+                                        <font size="1">33</font></div>
+                                    <div style="margin-top: 20px;margin-left: 60px;float: left;"><img alt="" src="/image/like_2x.png" style="width: 20px; height: 20px;"/>
+                                        <font size="1">30</font></div>
+                                    <div style="margin-top: 20px;margin-left: 60px;float: left;"><img alt="" src="/image/star83.png" style="width: 20px; height: 20px;"/>
+                                        <font size="1">2</font></div>
+                                    <div style="margin-top: 20px;margin-left: 60px;float: left;"><img alt="" src="/image/share_2x.png" style="width: 20px; height: 20px;"/><font
+                                            size="1">6</font></div>
+                                    <p class="text-right" style="margin-top: 20px"><b>更多...</b></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="row">
+                <div id='schedule-box' class="boxshaw">
+                </div>
+            </div>
+            <div class="row">
+
+
+
+                <!--分类-->
+                <div class="ui segments">
+                    <div class="ui secondary segment">
+                        <div class="ui two column grid">
+                            <div class="column">
+                                <i class="idea icon"></i>比赛分类
+                            </div>
+                            <div class="right aligned column">
+                                <a href="#" th:href="@{types/-1}" target="_blank">more <i class="angle double right icon"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui teal segment">
+                        <div class="ui fluid vertical menu">
+                            <a href="#" th:href="@{/types/{id}(id=${type.id})}"  class="item" th:each="type : ${types}">
+                                <span th:text="${type.name}">学习日志</span>
+                                <div class="ui teal basic left pointing label" th:text="${#arrays.length(type.contests)}">
+                                    13
+                                </div>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="panel panel-success" style="margin-top: 20px;width: 322px">
+                    <div class="panel-body">
+                        <div class="row" style="margin-left: 2px">
+                            <font size="4">最新推荐比赛</font>
+                        </div>
+                        <div class="row" style="background-color: #eeeeee;margin-top: 15px;height: 75px" th:each="recommend:${recommends}">
+                            <div class="col-md-2">
+                                <a th:href="@{/web/incondetail/{id}(id=${recommend.id})}"><img alt="" src="/image/palmolive.png" th:src="${recommend.picurl}"
+                                                                                               style="width: 65px;height: 65px;margin-left: 0px;margin-top: 5px"/>
+                                </a>
+                            </div>
+                            <div class="col-md-10">
+                                <div class="row">
+                                    <p style="margin-top: 10px;margin-left: 50px;font-size: 16px" th:text="${recommend.title}">Palmolive包装品牌设计</p>
+                                </div>
+                                <div class="row">
+                                    <font style="margin-top: 10px;margin-left: 50px;" size="1">类别：<span th:text="${recommend.type.name}"></span></font>
+                                    <font style="margin-top: 10px;margin-left: 3px;" size="1">日期：<span th:text="${recommend.endTime}"></span></font>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ****************************** -->
+    <div class="row">
+        <div class="panel panel-success">
+            <div class="panel-body">
+                <div class="row">
+                    <h3 class="panel-title" style="margin-left: 20px;margin-bottom: 20px"><strong>最热比赛</strong><sup><img
+                            src="/image/book.png" style="width: 15px;height: 15px;"/></sup></h3>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-5" th:each="hot:${hotcontests}">
+                        <img alt="" th:src="${hot.picurl}" style="margin-left: 50px;padding-left:20px;width: 500px;height: 150px"/>
+                    </div>
+
+                    <div class="col-md-1">
+                    </div>
+                    <div class="col-md-1" style="margin-top: 130px;">
+                        <b>更多...</b>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div th:replace="_fragments::footer" class="row" style="background-color: #7d0022;height: 100px">
+        <div class="col-md-4"></div>
+        <div class="col-md-4" style="margin-top: 35px;margin-left: 90px">
+            <a href="#"><font color="white">合作推广</font></a>
+            <a href="#" style="margin-left: 40px"><font color="white">关于我们</font></a>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
+</body>
+
+<script>
+    var mySchedule = new Schedule({
+        el: '#schedule-box',
+        //date: '2018-9-20',
+        clickCb: function (y, m, d) {
+            document.querySelector('#h3Ele').innerHTML = '日期：' + y + '-' + m + '-' + d
+        },
+        nextMonthCb: function (y, m, d) {
+            document.querySelector('#h3Ele').innerHTML = '日期：' + y + '-' + m + '-' + d
+        },
+        nextYeayCb: function (y, m, d) {
+            document.querySelector('#h3Ele').innerHTML = '日期：' + y + '-' + m + '-' + d
+        },
+        prevMonthCb: function (y, m, d) {
+            document.querySelector('#h3Ele').innerHTML = '日期：' + y + '-' + m + '-' + d
+        },
+        prevYearCb: function (y, m, d) {
+            document.querySelector('#h3Ele').innerHTML = '日期：' + y + '-' + m + '-' + d
+        }
+    });
+</script>
+
+</html>

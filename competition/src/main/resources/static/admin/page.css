@@ -1,0 +1,42 @@
+@CHARSET "UTF-8";
+.page {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.page a {
+    float: right;
+    display: block;
+    overflow: hidden;
+    margin: 0 0 5px 5px;
+    padding: 3px 8px;
+    border: 1px solid #CCC;
+    color: #101010;
+}
+
+.page a:hover {
+    background-color: #333;
+    color: #FFF;
+    text-decoration: none;
+}
+
+.page a.current {
+    background-color: #333;
+    color: #FFF;
+}
+
+label {
+    margin: 5px 0 10px 0;
+}
+
+input[type=file] {
+    margin-top: 6px;
+}
+
+@media screen and (max-width: 500px) {
+    /* 手机 */
+    label {
+        margin-bottom: 10px;
+    }
+}

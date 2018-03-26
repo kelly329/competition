@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="admin/_fragments::head">
+    <title>校园比赛信息推荐网后台管理系统</title>
+    <meta name="keywords" content="校园比赛,校园比赛信息推荐网管理系统"/>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+
+    <style>
+        .margin-top {
+            margin-top: 10px;
+        }
+
+        .tag-selected {
+            background: #1ab394 !important;
+            color: white !important;
+        }
+
+        .overy {
+            overflow-y: auto;
+        }
+    </style>
+</head>
+
+<body class="gray-bg top-navigation" style="min-height: 450px;">
+
+<div id="wrapper" th:replace="admin/_fragments::menu">
+    <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom white-bg">
+            <nav class="navbar navbar-static-top" role="navigation">
+                <div class="navbar-header">
+                    <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse"
+                            class="navbar-toggle collapsed" style="background-color:#1ab394" type="button">
+                        <i class="fa fa-reorder"></i>
+                    </button>
+                    <a href="{:U('Index/index')}" class="navbar-brand">校园比赛信息网后台管理</a>
+                </div>
+
+                <div class="navbar-collapse collapse" id="navbar">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a aria-expanded="false" role="button" href="#" class="dropdown-toggle"
+                               data-toggle="dropdown"> 比赛管理 <span class="caret"></span></a>
+                            <ul role="menu" class="dropdown-menu">
+                                <li><a href="{:U('Contest/contestlist')}">比赛信息管理</a></li>
+                                <li><a href="{:U('Type/typeList')}">比赛类型管理</a></li>
+                                <li><a href="{:U('Contest/community')}">比赛评论管理</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a aria-expanded="false" role="button" href="#" class="dropdown-toggle"
+                               data-toggle="dropdown"> 用户管理 <span class="caret"></span></a>
+                            <ul role="menu" class="dropdown-menu">
+                                <li><a href="{:U('FUser/userlist')}">用户信息管理</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a aria-expanded="false" role="button" href="#" class="dropdown-toggle"
+                               data-toggle="dropdown"> 组队管理 <span class="caret"></span></a>
+                            <ul role="menu" class="dropdown-menu">
+                                <li><a href="{:U('Post/answer')}">发起组队管理</a></li>
+                                <!--<li><a href="{:U('Role/role')}"></a></li>-->
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a aria-expanded="false" role="button" href="#" class="dropdown-toggle"
+                               data-toggle="dropdown"> 系统管理 <span class="caret"></span></a>
+                            <ul role="menu" class="dropdown-menu">
+                                <li><a href="{:U('Privilege/privilegeList')}">权限管理</a></li>
+                                <li><a href="{:U('Role/role')}">角色管理</a></li>
+                                <li><a href="{:U('System/users')}">后台用户管理</a></li>
+                                <li><a href="{:U('System/opinion')}">查看意见反馈</a></li>
+                                <li><a href="{:U('System/reviewLogs')}">查看系统日志</a></li>
+                                <!--<li><a href="{:U('System/logdetail')}">系统基本配置</a></li>-->
+                            </ul>
+                        </li>
+
+                    </ul>
+                    <ul class="nav navbar-top-links navbar-right">
+                        <li class="dropdown">
+                            <a aria-expanded="false" role="button" href="#" class="dropdown-toggle"
+                               data-toggle="dropdown" th:text="${session.admin.username}"> <span
+                                    class="caret"></span></a>
+                            <ul role="menu" class="dropdown-menu">
+                                <li>
+                                    <a href="{:U('System/edituserinfo')}">
+                                        <i class="fa fa-cogs"></i> 修改信息
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{:U('System/newlist')}">
+                                        <i class="fa fa-rss"></i> 系统公告
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{:U('System/feedbacklist')}">
+                                        <i class="fa fa-stack-overflow"></i> 帮助与反馈
+                                    </a>
+                                </li>
+                            </ul>
+
+                        </li>
+                        |
+                        <li>
+                            <a href="{:U('User/logout')}">
+                                <i class="fa fa-sign-out"></i> 退出
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="wrapper wrapper-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 pull-left">
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-title">
+                                <h5 th:text="${session.admin.userName}"><span style="font-weight:lighter;">,欢迎您</span></h5>
+                            </div>
+                            <div class="ibox-content">
+                                <h1 class="no-margins"></h1>
+
+                                <small>登录时间</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="footer" th:replace="admin/_fragments :: footer">
+                    <div style="text-align: center">
+                        <strong>Copyright</strong> 校园比赛信息推荐网 &copy; 2017 Beijing Normal University,Zhuhai Campus.All Rights Reserved.
+                        <p>当前版本号 : {$Think.config.VERSION_NUMBER}</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+            <script src="/admin/js/jquery.min.js"></script>
+            <script src="/admin/js/content.index.js"></script>
+            <script src="/admin/js/plugins/zeromodel/zeroModal.min.js"></script>
+            <script src="/admin/js/bootstrap.min.js?v=3.3.6"></script>
+            <script src="/admin/js/content.min.js?v=1.0.0"></script>
+            <script src="/admin/js/plugins/flot/jquery.flot.js"></script>
+            <script src="/admin/js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+            <script src="/admin/js/plugins/flot/jquery.flot.resize.js"></script>
+            <script src="/admin/js/plugins/chartJs/Chart.min.js"></script>
+            <script src="/admin/js/plugins/peity/jquery.peity.min.js"></script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,281 @@
+body {
+    font-family:"微软雅黑", Helvetica Neue, Helvetica, Arial, sans-serif; 
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #333333;
+    background-color: #eee;
+    margin: 0;
+}
+*{margin:0;
+    padding:0;}
+a{
+    text-decoration: none;
+}
+.clean{
+   clear: both; 
+}
+
+
+
+/*导航*/
+/*导航*/
+.nav-box,.navbar{
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+.logo{
+    float:left;
+    width: 11%;
+    height: 20%;
+    margin: 10px;
+}
+.navbar {
+    float: left;
+    margin: 20px;
+}
+.navbar a:hover{
+    color: #990000;
+}
+ul{
+    list-style: none;
+}
+.navbar-nav{
+    float: left;
+    margin: 0;
+}
+.navbar-nav > li + li:before {
+    float: left;
+    color: #CCCCCC;
+    content: "| ";
+    padding: 10px 0px;
+    margin-left:-10px;
+}
+.navbar-nav > li {
+    float: left;
+    margin: 10px;
+    font-size: 14px;
+}
+.navbar-nav > li > a {
+    position: relative;
+    display: block;
+    color: #555555;
+    padding: 10px 20px;
+}
+.navbar .navbar-nav > .active > a {
+    color: #990000;
+    
+}
+.navbar .navbar-nav > .active  {
+    border-top:  2px solid #990000;
+}
+.navbar-nav:after {
+    clear: both;
+}
+ .img-responsive{
+     max-width: 100%;
+     height: auto;
+}
+.form-search{
+    float:left;
+    
+}
+.search{
+    height: 35px;
+   
+    margin-top:30px;
+}
+.input-search {
+    float: left;
+    width: 68%;
+    display: block;
+    padding: 6px 15px;
+    font-size: 15px;
+    line-height: 1.428571429;
+    color: #555555;
+    background-color: #ccc;
+    background-image: none;
+    border: 1px solid #ccc;
+    /*border-radius: 4px;*/
+    box-shadow: none;
+}
+button {
+  display: inline-block;
+  /*padding: 6px 12px;*/
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.428571429;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+       -o-user-select: none;
+          user-select: none;
+}
+.search-btn {
+    color: #FFF;
+    background-color: #990000;
+    height: 100%;
+    text-transform: uppercase;
+    width: 16%;
+    float: right;
+    overflow: visible;
+    cursor: pointer;
+}
+.login{
+    position: relative;
+    left: 50px;
+    top: -35px;
+    width: 19%;
+    height: 36px;
+    float: right;
+}
+.login div{
+    float: left;
+    margin: 5px;
+    padding: 5px;
+    width: 30%;
+    text-align: center;
+}
+.l1{background-color: #EEEEEE;}.l1 a{color: #A12928;}
+.l2{background-color: #A12928;}.l2 a{color: #EEEEEE;}
+ }
+/*以上为导航*/
+
+
+
+
+
+
+/*主体*/
+.container1{
+  width:100%;
+  height:250px;
+  margin:auto;
+  margin-top: -20px;
+  margin-bottom: 40px;
+  background-color:#ccc;
+  /*border:3px solid red;*/
+}
+/*.container1:hover{
+  box-shadow:0 0 10px #000;
+  在0 0前加inset变成内阴影
+}*/
+.container1 img{
+  width:100%;
+  height:400px;
+  padding: 6px 6px;
+}
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.container:before,.container:after {
+  display: table;
+  content: " ";
+  /*content属性，能够实现页面中的内容插入*/
+}
+
+.container:after {
+  clear: both;
+  /*在左右两侧均不允许浮动元素*/
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/*以上为主题*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*以下为页脚*/
+footer{
+    background-color: #800926;
+    margin-top: 20px;
+}
+.foot{
+    height: 100px;
+}
+.foot a{
+    float: left;
+    margin: 45px 30px 0;
+    color: #ccc;
+}.foot a:hover{color: #ccc;}
+
+.banquan{
+  text-align: center;
+  font-size: 12px;
+  color:#000000;
+  text-decoration: none;
+  line-height: 200%;}
+.banquan a{text-decoration: none;}
+.clear { clear:both; }
+
+
+
+
+
+
+
+
+
+
+/*弹框*/
+#fade { 
+display:none; 
+position:fixed; 
+top:0%; 
+left:0%; 
+width:100%; 
+height:100%; 
+background-color:black; 
+z-index:1001; 
+-moz-opacity:0.8; 
+opacity:.80; 
+filter:alpha(opacity=50); 
+} 
+#light{ 
+display:none; 
+position:fixed; 
+top:25%; 
+left:25%; 
+width:50%; 
+height:50%; 
+padding:16px; 
+border:2px solid #555555; 
+background-color:#eeeeee; 
+z-index:1002; 
+overflow:auto; 
+}

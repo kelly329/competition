@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="admin/_fragments::head">
+</head>
+<body class="gray-bg top-navigation" style="min-height: 450px;">
+<div th:replace="admin/_fragments::menu"></div>
+<div class="wrapper wrapper-content animated fadeInDown">
+    <div class="ibox-content m-b-sm border-bottom">
+        <div class="row">
+            <div class="col-sm-11 p-xs">
+                <div class="pull-left m-r-md">
+                    <i class="fa fa-sitemap text-navy mid-icon"></i>
+                </div>
+                <h2>类型管理</h2>
+                <span>管理员添加、编辑、删除类型，以控制比赛类型的显示。</span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-sm-1">
+                            <a href="" th:href="@{/admin/types/input}" >
+                                <button type="button" class="btn btn-sm btn-primary">添加类型</button>
+                            </a>
+                        </div>
+                        <div class="col-sm-7"></div>
+
+                    </div>
+                    <div class="margin-top"></div>
+                    <div class="ui success message" th:unless="${#strings.isEmpty(message)}">
+                        <i class="close icon"></i>
+                        <div class="header">提示：</div>
+                        <p th:text="${message}">恭喜，操作成功！</p>
+                    </div>
+                    <table class="table table-hover" align="center">
+                        <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>类型名称</th>
+
+                            <th>操作／删除</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <tr th:each="type,iterStat : ${page.content}">
+                            <td th:text="${iterStat.count}">1</td>
+                                <td th:text="${type.name}"></td>
+                                <td><a class="text-navy" th:href="@{/admin/types/{id}/input(id=${type.id})}">编辑</a>／
+                                    <a class="text-navy" th:href="@{/admin/types/{id}/delete(id=${type.id})}">删除</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                      <tfoot>
+                      <tr>
+                          <th colspan="8">
+                              <div class="ui mini pagination menu" th:if="${page.totalPages}>1" style="float: right">
+                                  <a th:href="@{/admin/types(page=${page.number}-1)}" class="ui mini  teal basic button" th:unless="${page.first}">上一页</a>
+                                  <a th:href="@{/admin/types(page=${page.number}+1)}" class="ui mini  teal basic button" th:unless="${page.last}">下一页</a>
+                              </div>
+                          </th>
+                      </tr>
+                        </tfoot>
+                    </table>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+    <div  class="navbar-fixed-bottom'" th:replace="admin/_fragments::footer"></div>
+<script>
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+
+    $('.ui.dropdown').dropdown({
+        on: 'hover'
+    });
+
+    //消息提示关闭初始化
+    $('.message .close')
+        .on('click',function(){
+            $(this)
+                .closest('.message')
+                .transition('fade');
+        });
+</script>
+    </body>
+    </html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+    <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+    <head th:fragment="head">
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+            <title> 校园比赛信息推荐网后台管理系统</title>
+    <meta name="keywords" content="校园比赛,校园比赛信息推荐网管理系统"/>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css"/>
+    <link href="/admin/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/admin/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="/admin/css/animate.min.css" rel="stylesheet"/>
+    <link href="/admin/css/style.min862f.css?version=201706" rel="stylesheet"/>
+    <link href="/admin/css/page.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="/css/me.css"/>
+        <link rel="stylesheet" href="/admin/css/newstyle.css"/>
+        <script src="/admin/js/jquery.min.js"></script>
+        <script src="/admin/js/content.index.js"></script>
+        <script src="/admin/js/plugins/zeromodel/zeroModal.min.js"></script>
+
+
+        <style>
+        .margin-top {
+            margin-top: 10px;
+        }
+
+        .tag-selected {
+            background: #1ab394 !important;
+            color: white !important;
+        }
+
+        .overy {
+            overflow-y: auto;
+        }
+    </style>
+</head>
+
+<!--导航-->
+<body class="gray-bg top-navigation" style="min-height: 450px;">
+
+<div id="wrapper" th:fragment="menu">
+    <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom white-bg">
+            <nav class="navbar navbar-static-top" role="navigation">
+                <div class="navbar-header">
+                    <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse"
+                            class="navbar-toggle collapsed" style="background-color:#1ab394" type="button">
+                        <i class="fa fa-reorder"></i>
+                    </button>
+                    <a href="#" class="navbar-brand">校园比赛信息网后台管理</a>
+                </div>
+
+                <div class="navbar-collapse collapse" id="navbar">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a  th:href="@{/admin/contestlist}"> 比赛管理 <span class="caret"></span></a>
+                            <ul role="menu" class="dropdown-menu">
+                                <li><a href="#">比赛信息管理</a></li>
+                                <li><a href="#">比赛类型管理</a></li>
+                                <li><a href="#">比赛评论管理</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#" th:href="@{/admin/userlist}" > 用户管理 <span class="caret"></span></a>
+                            <!--<ul role="menu" class="dropdown-menu">-->
+                                <!--<li><a href="#">用户信息管理</a></li>-->
+
+                            <!--</ul>-->
+                        </li>
+                        <li>
+                            <a href="#" th:href="@{/admin/types}" > 类型管理 <span class="caret"></span></a>
+                            <!--<ul role="menu" class="dropdown-menu">-->
+                            <!--<li><a href="#">用户信息管理</a></li>-->
+
+                            <!--</ul>-->
+                        </li>
+                        <li class="dropdown">
+                            <a aria-expanded="false" role="button" href="#" class="dropdown-toggle"
+                               data-toggle="dropdown"> 组队管理 <span class="caret"></span></a>
+                            <ul role="menu" class="dropdown-menu">
+                                <li><a href="#">发起组队管理</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a aria-expanded="false" role="button" href="#" class="dropdown-toggle"
+                               data-toggle="dropdown"> 后台管理员管理 <span class="caret"></span></a>
+                            <ul role="menu" class="dropdown-menu">
+                                <li><a href="#">权限管理</a></li>
+                                <li><a href="#">角色管理</a></li>
+                                <li><a href="#">后台用户管理</a></li>
+                                <li><a href="#">查看意见反馈</a></li>
+                                <li><a href="#">查看系统日志</a></li>
+                                <!--<li><a href="{:U('System/logdetail')}">系统基本配置</a></li>-->
+                            </ul>
+                        </li>
+
+                    </ul>
+                    <ul class="nav navbar-top-links navbar-right">
+                        <li class="dropdown">
+                            <a aria-expanded="false" role="button" href="#" class="dropdown-toggle"
+                               data-toggle="dropdown" th:text="${session.admin.username}"> <span
+                                    class="caret"></span></a>
+                            <ul role="menu" class="dropdown-menu">
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-cogs"></i> 修改信息
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-rss"></i> 系统公告
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-stack-overflow"></i> 帮助与反馈
+                                    </a>
+                                </li>
+                            </ul>
+
+                        </li>
+                        |
+                        <li>
+                            <a href="#" th:href="@{/admin/logout}">
+                                <i class="fa fa-sign-out"></i> 退出
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<!--底部-->
+        <div class="footer navbar-fixed-bottom'" th:fragment="footer" style="position: fixed;bottom:0px; width: 100%;text-align: center">
+
+            <div style="text-align: center">
+                <strong>Copyright</strong> 校园比赛信息推荐网 &copy; 2017 Beijing Normal University,Zhuhai Campus.All Rights Reserved.
+                <p>当前版本号 :  1.0 Beta (Build c69c62ec97)</p>
+            </div>
+
+            <script src="/admin/js/bootstrap.min.js?v=3.3.6"></script>
+            <script src="/admin/js/content.min.js?v=1.0.0"></script>
+            <script src="/admin/js/plugins/flot/jquery.flot.js"></script>
+            <script src="/admin/js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+            <script src="/admin/js/plugins/flot/jquery.flot.resize.js"></script>
+            <script src="/admin/js/plugins/chartJs/Chart.min.js"></script>
+            <script src="/admin/js/plugins/peity/jquery.peity.min.js"></script>
+        </div>
+
+
+
+
+</body>
+</html>

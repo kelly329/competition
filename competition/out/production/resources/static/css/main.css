@@ -1,0 +1,311 @@
+/* 
+* @Author: anchen
+* @Date:   2016-04-21 08:19:31
+* @Last Modified by:   anchen
+* @Last Modified time: 2016-05-04 17:56:57
+*/
+/*总体样式*/
+body {
+    font-family: "Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu;
+    position: relative;
+}
+/*浏览器去除虚线*/
+a {outline: none;}
+a:active {outline: none;star:expression(this.onFocus=this.blur());}
+:focus { outline:0; }
+a:focus {outline: none;}
+/*工具*/
+ 
+.mr-50{margin-right: 50px;}
+ 
+/*登录注册样式*/
+.btn-hui {
+  color: #fff;
+  background-color: #666666;
+  border: none;
+}
+.btn-danger{
+  color: #fff;
+  background-color: #99000;
+  border: none;
+}
+.feature {
+    width: 100%;
+    overflow-y: auto;
+    position: relative;
+    padding: 10% 0 1%;
+    background: url("../himages/1.jpg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.images/psimg/reg-log-bg.jpg', sizingMethod='scale');
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/psimg/reg-log-bg.jpg', sizingMethod='scale')";
+}
+@media (max-height: 550px){
+    .feature{
+        padding: 0;
+    }
+}
+ 
+.register-login-all {
+    width: 450px;
+    min-height: 436px;
+    position: relative;
+    margin: 0 auto;
+}
+.register-login-all.register-login-three{
+    width: 650px;
+}
+.register-login-left{
+    width: 60%;
+}
+.register-login-right{
+    width: 40%;
+    padding: 30px 0 30px 60px;
+    position: relative;
+}
+.register-login-right .login-right-sx{
+    width: 60px;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: url("../images/icons/login-three-sx.png") repeat-y center;
+}
+.register-login-right .login-right-sx span{
+    width: 60px;
+    text-align: center;
+    height: 30px;
+    background-color: #ffffff;
+    line-height: 30px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -15px;
+    color: #666666;
+    font-size: 14px;
+}
+.register-login-right .login-three-right-btn{
+    height: 40px;
+    display: block;
+    width: 100%;
+    padding-left: 50px;
+    line-height: 40px;
+    font-size: 14px;
+    color: #feffff;
+    position: relative;
+}
+.register-login-right .login-three-right-btn.three-right-qq{
+    background-color: #4e9ac8;
+}
+.register-login-right .login-three-right-btn.three-right-wechat{
+    background-color: #51b341;
+}
+.register-login-right .login-three-right-btn.three-right-weibo{
+    background-color: #d42c4c;
+    margin-bottom: 60px;
+}
+.register-login-right .login-three-right-btn.three-right-qq span{
+    background-image: url("../images/icons/reg-log-qq.png");
+}
+.register-login-right .login-three-right-btn.three-right-wechat span{
+    background-image: url("../images/icons/reg-log-wechat.png");
+}
+.register-login-right .login-three-right-btn.three-right-weibo span{
+    background-image: url("../images/icons/reg-log-weibo.png");
+}
+.register-login-right .login-three-right-btn span{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 0;
+    top: 0;
+    border-right: 1px solid rgba(0,0,0,.1);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.register-login-all .nav{
+    height: 36px;
+    padding: 0 0 0 36px;
+    border: 0;
+}
+.register-login-all .nav a{
+    padding: 0 24px;
+    line-height: 36px;
+    color: #767676!important;
+    background-color: #ebebeb!important;
+    border: none!important;
+}
+.register-login-all .nav .active a,.register-login-all .nav .active a:hover{
+    background-color: #333333!important;
+    color: #ffffff!important;
+    border: none!important;
+}
+.register-login-all .tab-content{
+    width: 100%;
+    min-height: 400px;
+    background-color: #ffffff;
+    box-shadow: 0 0 16px #7f7581;
+    -webkit-box-shadow: 0 0 16px #7f7581;
+    -moz-box-shadow: 0 0 16px #7f7581;
+    -o-box-shadow: 0 0 16px #7f7581;
+    z-index: 1;
+    position: relative;
+    padding: 20px 50px;
+    overflow: hidden;
+}
+.register-login-all .form-control{
+    height: 40px;
+    background-color: #ebebeb;
+    border-radius: 0;
+}
+.yzm-field{
+    height: 40px;
+    border: 1px solid #cccccc;
+}
+.yzm-field .yzm-all .form-control{
+    height: 38px;
+    border: none;
+    width: 60%;
+    float: left;
+    background-color: #ffffff;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.yzm-field .yzm-all .yzm-div{
+    width: 40%;
+    height: 38px;
+    float: left;
+    overflow: hidden;
+}
+.yzm-div img {
+    width: 130px;
+    height: 38px;
+}
+.customer-reg-form p.help-block{
+    margin: 0!important;
+}
+button.reg-log, .btn.reg-log {
+    background-color: #de0027;
+    border-color: #de0027;
+    color: #FFFFFF; }
+    button.reg-log:hover, button.reg-log:focus, .btn.reg-log:hover, .btn.reg-log:focus {
+      background-color: #cf2a0e; }
+    button.reg-log:hover, button.reg-log:focus, .btn.reg-log:hover, .btn.reg-log:focus {
+      color: #FFFFFF; }
+button.reg-black, .btn.reg-black {
+    background-color: #333333;
+    border-color: #333333;
+    color: #FFFFFF; }
+    button.reg-black:hover, button.reg-black:focus, .btn.reg-black:hover, .btn.reg-black:focus {
+      background-color: #000000; }
+    button.reg-black:hover, button.reg-black:focus, .btn.reg-black:hover, .btn.reg-black:focus {
+      color: #FFFFFF; }
+.text-color-tc {
+  color: #de0027;
+}
+.remaber-me-pw a.pull-right {
+  line-height: 22px;
+  color: #000000;
+}
+a.reg-a {
+  color: #000000;
+  padding: 0 0.3125rem;
+  text-decoration: underline;
+}
+.icon-reg-icon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+ 
+.register-login-all .reg-ther{
+    margin: 0 -24px;
+}
+.register-login-all .reg-ther h3 {
+    margin: 0 0 20px;
+}
+.register-login-all .reg-ther h3 .pull-right{
+    line-height: 26px;
+    font-size: 14px;
+}
+.reg-div-all {
+  border-radius: 3px;
+  background-color: #eeeeee;
+  line-height: 48px;
+  height: 48px;
+  margin-bottom: 20px;
+  padding: 0 20px;
+}
+.reg-div-all .btn{
+    margin-top: 6.5px;
+}
+.heng-ge {
+  height: 1px;
+  width: auto;
+  margin: 20px -32px;
+  border-bottom: 1px solid #e8e8e8;
+}
+@media (max-width: 450px){
+    .register-login-all{
+        width: 100%;
+    }
+    .register-login-all .tab-content{
+        padding: 24px;
+    }
+}
+@media (max-width: 360px){
+    .register-login-all .reg-ther h3 .pull-right{
+        display: none;
+    }
+    .register-login-all .reg-ther{
+        margin: 0 -12px!important;
+    }
+}
+@media (max-width: 650px){
+    .register-login-all.register-login-three{
+        width: 100%;
+    }
+    .register-login-all .tab-content{
+        padding: 24px;
+    }
+}
+@media (max-width: 560px){
+    .register-login-left,.register-login-right{
+        width: 100%;
+    }
+    .register-login-right{
+        padding: 60px 0 30px;
+    }
+    .register-login-right .login-right-sx{
+        width: 100%;
+        height: 60px;
+        background-repeat: repeat-x;
+    }
+    .register-login-right .login-right-sx span{
+        left: 50%;
+        top: 0;
+        margin-top: 0;
+        margin-left: -30px;
+        height: 60px;
+        line-height: 60px;
+    }
+}
+ 
+ 
+ .stoplogin{
+    position: relative;
+    left: 355px;
+    top: -10px;
+}
+ 

@@ -1,0 +1,111 @@
+<div class="wrapper wrapper-content animated fadeInDown">
+    <div class="ibox-content m-b-sm border-bottom">
+        <div class="row">
+            <div class="col-sm-11 p-xs">
+                <div class="pull-left m-r-md">
+                    <i class="fa fa-sitemap text-navy mid-icon"></i>
+                </div>
+                <h2>后台用户管理</h2>
+                <span>管理后台用户</span>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-lg-12 col-md-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-sm-1 col-lg-1 col-md-1">
+                            <a href="{:U('System/addusr')}">
+                                <button type="button" class="btn btn-sm btn-primary">添加后台用户</button>
+                            </a>
+                        </div>
+                        <div class="col-sm-6 col-lg-6 col-md-6">
+
+                                <span class="label label-info">{$vo.rolename}</span></if>
+                            <if condition="$_GET['type'] eq '1'"><span class="label label-success">正常</span>
+                                <elseif condition="$_GET['type'] eq '2'"/>
+                                <span class="label label-danger">停用</span></if>
+                        </div>
+                        <div class="col-sm-3 col-lg-3 col-md-3">
+                            <form action="__ACTION__" method="get">
+                                <div class="input-group">
+                                    <input type="text" placeholder="搜索管理员用户" class="input-sm form-control"
+                                           name="username" value="{$_GET['username']}">
+                                      <span class="input-group-btn">
+                                        <button type="submit" class="btn btn-sm btn-primary"><i
+                                                class="fa fa-search"></i></button> </span>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="col-sm-1 col-lg-1 col-md-1 pull-left">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-primary dropdown-toggle"
+                                        data-toggle="dropdown">
+                                    状态筛选 <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="<?php echo valueChange('type',2)?>">只显示禁用用户</a></li>
+                                    <li><a href="<?php echo valueChange('type',1)?>">只显示激活用户</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="<?php echo valueChange('type',0)?>">显示全部</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="margin-top"></div>
+
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>用户昵称</th>
+                            <th>登录账号</th>
+                            <th>上次登录时间</th>
+                            <!--<th>角色</th>-->
+                            <th>状态</th>
+                            <th>管理 / 修改信息</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <foreach name="list" item="vo">
+                            <tr>
+                                <td>{$key+1}</td>
+                                <!--<td><if condition="$vo.role eq '1'">超级管理员<else/>普通管理员</if></td>-->
+                                <td>{$vo.nickname}</td>
+                                <td>{$vo.username}</td>
+                                <td><?php echo date('Y-m-d H:i:s',$vo['lastime'])?></td>
+                                <td>
+                                    <if condition="$vo.isban eq '0'"><span class="label label-success">正常</span>
+                                        <else/>
+                                        <span class="label label-danger">停用</span></if>
+                                </td>
+                                <td>
+                                    <if condition="$vo.isban eq '0'">
+                                        <a class="text-navy"
+                                           href="__CONTROLLER__/closeuser/id/{$vo['adminid']}<?php echo getRightUrl();?>">禁用 </a>
+                                        <else/>
+                                        <a href="__CONTROLLER__/openuser/id/{$vo['adminid']}<?php echo getRightUrl();?>"
+                                           class="text-navy">激活 </a></if>
+                                    / <a class="text-navy" href="__CONTROLLER__/userinfo/id/{$vo['adminid']}"> 修改信息</a>
+                                </td>
+                                <!--/ <a class="text-navy" href="__CONTROLLER__/reset/id/{$vo['eid']}"> 重置密码</a>-->
+                            </tr>
+                        </foreach>
+
+                        </tbody>
+                    </table>
+                    <div class="page-container">
+                        <div class="page">{$page}</div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

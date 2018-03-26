@@ -1,0 +1,114 @@
+body{
+    background-color: #fff;
+}
+a{text-decoration: none; color: #fff}
+button{color: #fff;font-weight: 600;}
+.bgt{
+    position:absolute; 
+    width:100%; 
+    height:98%; 
+    z-index:-1;
+}
+.biaodan1{
+    background-color: rgba(0, 0, 0, 0.5);
+    width:50%;
+    height:50%;
+    border-radius: 10px;
+    position:relative; 
+    top:60px; 
+    left:25%;
+    overflow:auto;
+}
+.biaodan2{
+    background-color: rgba(0, 0, 0, 0.5);
+    width:50%;
+    height:50%;
+    border-radius: 10px;
+    position:relative; 
+    top:110px; 
+    left:25%;
+    overflow:auto;
+}
+.biaodan3{
+    background-color: rgba(0, 0, 0, 0.5);
+    width:1000px;
+    height:385px;
+    border-radius: 10px;
+    position:relative; 
+    top:80px; 
+    left:12.5%;
+    overflow:auto;
+}
+.biaodan4{
+    background-color: rgba(0, 0, 0, 0.5);
+    width:50%;
+    height:500px;
+    border-radius: 10px;
+    position:relative; 
+    top:110px; 
+    left:25%;
+    overflow:auto;
+}
+.biaoge{
+    background-color:rgba(0, 0, 0, 0.5);
+    margin: 30px 30px;
+    width:91%;
+    color:#fff;
+    font-family:"微软雅黑", Helvetica Neue, Helvetica, Arial, sans-serif; 
+    font-size: 0.8em;
+}
+.td1{
+    width:25%;
+    text-align: right;
+    padding:10px 20px;
+}
+.td2{
+    padding:10px 20px;
+}
+.style1{
+    font-family:"微软雅黑", Helvetica Neue, Helvetica, Arial, sans-serif; 
+    background-color: rgba(0, 0, 0, 0.5);
+    border:1px solid #000;
+    padding:10px 10px;
+    color:#fff;
+    width:80%;
+}
+.button1{
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    color:#000;
+    width:15%;
+    height:40px;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-left: 88px;
+    cursor:pointer;
+}
+.button2{
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    color:#000;
+    width:15%;
+    height:40px;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-left: 100px;
+    cursor:pointer;
+}
+.button3{
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    color:#000;
+    width:15%;
+    height:40px;
+    text-align: center;
+    position:relative;
+    top:100px;
+    margin-left: 70px;
+    cursor:pointer;
+}
+.btn-box{
+    position: relative;
+    top: 100px;
+    margin: 50px;
+}

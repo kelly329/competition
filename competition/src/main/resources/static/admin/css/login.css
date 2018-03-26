@@ -1,0 +1,27 @@
+.tab-pannel
+{
+    height: 300px;
+}
+.tab-bar{
+    margin-bottom: 20px;
+}
+.tab-button
+{
+    border-style: none;/*  此步是必须的  */
+    border-bottom: 2px solid #e6e6e6;
+    outline: none;
+    background-color: transparent;
+
+            appearance: none;
+       -moz-appearance: none;
+    -webkit-appearance: none;
+    highlight: none;
+}
+.tab-button:hover{
+    color:#1dc5a3;
+}
+input,select,option,textarea{outline: none !important;}
+.tab-button-active{
+    color:#1dc5a3;
+    border-bottom: 2px solid #1dc5a3 ;
+}

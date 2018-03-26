@@ -1,0 +1,162 @@
+
+.p1{
+  width:100%;
+  min-height: 200px;
+  height:auto;
+  padding: 10px 0;
+  float:left;
+}
+.p1a{
+    width:100%;
+    min-height:220px;
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+/*.p1a:hover{
+    box-shadow:inset 0 0 10px #000;
+    background-color: #eee;
+}*/
+.headsculpture img{
+    float:left;
+    width:50px;
+    height:50px;
+    margin-left: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+.headsculpture img:hover{
+    box-shadow: 1px 1px 2px #000;
+}
+.clear{
+    clear:both;
+}
+.name1 a{/*
+    position:relative;*/
+    float:left;
+    margin-left: 19px;
+    margin-top: 25px;
+    text-align: left;
+    font-weight: bolder;
+    font-size: 15px;
+    color:#990000;
+}
+.language1{
+    width:85%;
+    min-height:90px;
+    float:left;
+    margin-top: -18px;
+    margin-left: 87px;
+    margin-bottom: 2px;
+    text-align:left;
+    font-size:13px;
+    color: #535353;
+    letter-spacing:0.5px;/*间距*/
+    line-height:22px;/*行距*/
+}
+.b{
+    width:100%;
+    height:auto;
+    overflow:auto;
+}
+.zan{
+    float:right;
+    margin-right: 27px;
+}
+.zan img{
+    width:50px;
+    height:50px;
+    margin:auto;
+}
+.huifu a{
+    font-size: 9px;
+    float:right;
+    margin: 0 30px;
+    text-align: center;
+    line-height: 57px;
+    color:#990000;
+}
+.huifu a:hover{
+    font-weight: bolder;
+    cursor:pointer;
+}
+.bs{
+    position:relative;
+    overflow: hidden; 
+    white-space: nowrap; 
+    text-overflow: ellipsis;
+    height:auto;
+}
+.button1{
+    position:relative;
+    background-color: #fff;
+    color:#990000;
+    margin-left:2px;
+}
+.button2{
+    position:inherit;
+    margin-left:-70px;
+    background-color: #fff;
+    color:#990000;
+}
+/*输入框的显示与隐藏*/
+.inputbox{
+    position:relative;
+    width:65%;
+    height:auto;
+    display:none; /* 默认对话框隐藏 */
+    border-radius: 5px;
+    padding:5px 10px;
+    margin: 34px auto 10px;
+
+}
+.inputbox.show{display:block;} 
+.inputbox img{
+    float:left;
+    width:18px;
+    height:18px;
+}
+.inputbox img:hover{
+    box-shadow: 0 0 2px #ccc;
+}
+.inputbox textarea{
+    width:100%;
+    height:22px;
+    overflow:hidden;
+    resize:none;
+    font-family:"微软雅黑", Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    background-color: #eeeeee;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding:5px 10px;
+    letter-spacing:0.5px;
+    line-height:22px;
+    margin-top: -10px;
+}
+.inputbox .puton{
+    float:right;
+    font-family:"微软雅黑", Helvetica Neue, Helvetica, Arial, sans-serif;
+    background-color:#990000;
+    width: 70px;
+    height: 32px;
+    text-align: center;
+    line-height:32px;
+    border-radius: 5px;
+    color:#fff;
+    border:0px;
+    margin-right: -21px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+.inputbox .puton:hover{
+    font-weight:bolder;
+    cursor: pointer;
+}
+.inputbox textarea:focus{
+    height:44px;
+    border:1px solid #990000;
+    outline: none;
+    overflow:auto;
+    box-shadow:inset 0 0 5px #000;
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>500</title>
+
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="/css/xnxq.css"/>
+
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_234130_nem7eskcrkpdgqfr.css"/>
+    <link rel="stylesheet" href="/css/me.css"/>
+</head>
+<body>
+<!--导航-->
+<div th:replace="_fragments :: menu(0)" class="nav-box" style="margin-left: 10px">
+    <div class="container">
+        <div class="logo"><img src="/image/logo.png"/></div>
+        <div class="navbar">
+            <ul class="navbar-nav">
+                <li th:classappend="${n==1} ? 'active'"><a href="#" class="">首页</a></li>
+                <li th:classappend="${n==2} ? 'active'"><a href="#" class=""> 校内比赛</a></li>
+                <li th:classappend="${n==3} ? 'active'"><a href="#" class=""> 校外比赛</a></li>
+                <li th:classappend="${n==4} ? 'active'"><a href="#" class="" >组队社区</a></li>
+                <li th:classappend="${n==5} ? 'active'"><a href="#" class="">推荐比赛</a></li>
+            </ul></div>
+        <form class="form-search">
+            <div class="search">
+                <input class="input-search" type="text" />
+                <button type="submit" class="search-btn">
+                    <img src="/image/search.png" width="32px" height="32px"/></button>
+            </div>
+        </form>
+
+        <div style="margin: 10px;">
+            <ul class="nav nav-pills">
+                <li class="dropdown all-camera-dropdown" style="color: #000000">
+                    <a data-toggle="dropdown" href="#">
+                        <img src="/image/facelog.jpg" width="50px" height="50px" style="border-radius: 50px;margin-left: 20px" />
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li style="padding-top: 20px;padding-bottom: 10px;">
+                            <a href="#">
+                                <span class="glyphicon glyphicon-user" style="color: rgb(212, 106, 64);margin-right: 10px;"></span>
+                                我的主页
+                            </a>
+                        </li>
+                        <li style="padding-top: 10px;padding-bottom: 10px;">
+                            <a  href="https://www.baidu.com/">
+                                <span class="glyphicon glyphicon-bookmark" style="color: rgb(212, 106, 64);margin-right: 10px;"></span>
+                                关注的比赛
+                            </a>
+                        </li>
+                        <li style="padding-top: 10px;padding-bottom: 10px;">
+                            <a  href="#">
+                                <span class="glyphicon glyphicon-heart" style="color: rgb(212, 106, 64);margin-right: 10px;"></span>
+                                喜欢的比赛
+                            </a>
+                        </li>
+                        <li style="padding-top: 10px;padding-bottom: 10px;">
+                            <a href="#">
+                                <span class="glyphicon glyphicon-star" style="color: rgb(212, 106, 64);margin-right: 10px;"></span>
+                                点赞的比赛
+                            </a>
+                        </li>
+                        <li style="padding-top: 10px;padding-bottom: 10px;">
+                            <a href="#">
+                                <span class="glyphicon glyphicon-envelope" style="color: rgb(212, 106, 64);margin-right: 10px;"></span>
+                                发布的组队
+                            </a>
+                        </li>
+                        <li style="padding-top: 10px;padding-bottom: 10px;">
+                            <a href="#">
+                                <span class="glyphicon glyphicon-cog" style="color: rgb(212, 106, 64);margin-right: 10px;"></span>
+                                设置
+                            </a>
+                        </li>
+                        <li style="padding-top: 10px;padding-bottom: 20px;">
+                            <a href="#">
+                                <span class="glyphicon glyphicon-log-out" style="color: rgb(212, 106, 64);margin-right: 10px;"></span>
+                                退出
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div style="clear: both"></div>
+<br/>
+<br/>
+
+
+<div class="m-container-small m-padded-tb-massive">
+    <div class="ui error message m-padded-tb-huge" style="height: 300px;">
+        <div class="ui container" >
+            <h2>500</h2>
+            <p>对不起，服务异常，请联系管理员</p>
+
+        </div>
+    </div>
+</div>
+
+
+<!--底部-->
+<div th:replace="_fragments::footer" class="row" style="background-color: #7d0022;height: 100px">
+    <div class="col-md-4"></div>
+    <div class="col-md-4" style="margin-top: 35px;margin-left: 90px">
+        <a href="#"><font color="white">合作推广</font></a>
+        <a href="#" style="margin-left: 40px"><font color="white">关于我们</font></a>
+    </div>
+    <div class="col-md-4"></div>
+</div>
+</body>
+</html>

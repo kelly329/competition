@@ -1,0 +1,49 @@
+@CHARSET 'UTF-8';
+.page {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.page a,
+.page span {
+    font-weight: 400;
+
+    display: inline-block;
+    overflow: hidden;
+    margin: 0 0 5px 5px;
+    padding: 3px 8px;
+    color: #ccc;
+    border-radius: 5px;
+}
+
+.page a:hover {
+    text-decoration: none;
+    color: #1ab394;
+    background-color: #eee;
+}
+
+.page .current {
+    color: #fff;
+    border-radius: 5px;
+    background-color: #1ab394;
+}
+
+label {
+    margin: 5px 0 10px 0;
+}
+
+input[type=file] {
+    margin-top: 6px;
+}
+
+@media screen and (max-width: 500px) {
+    /* 手机 */
+    label {
+        margin-bottom: 10px;
+    }
+}
+
+.page-container {
+    text-align: center;
+}

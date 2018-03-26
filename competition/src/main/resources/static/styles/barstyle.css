@@ -1,0 +1,45 @@
+.l3{
+	background-color: #EEEEEE;
+	color: #A12928;
+    float: right;
+    margin: 5px;
+    padding: 5px;
+    width: 30%;
+    text-align: center;
+    margin-right: 13px;
+}
+.people,.welcome{
+    text-align: center;
+    margin-top: 10px;
+
+}
+.welcome{
+	float:left;
+	margin-left: 2px;
+}
+.people{
+	float: right;
+	margin-right:15px;
+}
+.adminlogin{
+    float: right;
+    color:black;
+    font-size:12px;
+    margin-top: 10px;
+    margin-right: -38px;
+}
+.relogin{
+   /* margin-top: -28px;*/
+}
+.ll2{margin-right: -5px;}
+.col-sm-9{
+    margin-top: 5px;
+}
+.tt{
+    margin-top: -3px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.usercenter{
+    color:#A12928;
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="admin/_fragments::head">
+</head>
+<body class="gray-bg top-navigation" style="min-height: 450px;">
+<div th:replace="admin/_fragments::menu"></div>
+<div class="wrapper wrapper-content animated fadeInDown">
+    <div class="ibox-content m-b-sm border-bottom">
+        <div class="row">
+            <div class="col-sm-11 p-xs">
+                <div class="pull-left m-r-md">
+                    <i class="fa  fa-mortar-board text-navy mid-icon"></i>
+                </div>
+                <h2>用户信息</h2>
+                <span>管理用户及编辑用户信息</span>
+            </div>
+        </div>
+    </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-content">
+                        <!--一行内容-->
+                        <div class="row">
+                            <div class="col-lg-12 ">
+                                <h2 th:text="${user.userName}">
+                                    {$info.username}
+                                    <img src="__ROOT__/{$info.image}" height="30" style="max-width: 500px"
+                                         id="preview"/>
+                                    <span class="btn btn-white btn-xs" style="margin-left: 10px">
+                                       {$info.college}
+                                    </span>
+                                    <span class="btn btn-white btn-xs" style="margin-left: 10px">
+                                       {$info.major}
+                                    </span>
+                                    <span class="btn btn-white btn-xs" style="margin-left: 10px">
+                                       {$info.grade}
+                                    </span>
+                                    <span class="btn btn-white btn-xs" style="margin-left: 10px">
+                                        <?php echo $info['sex']=='0'?'女':'男'?>
+                                    </span>
+                                    <span class="btn btn-white btn-xs" style="margin-left: 10px">
+                                      {$info.protrait}
+                                    </span>
+                                </h2>
+                                <div class="col-sm-3">
+                                    <label>用户昵称</label>
+                                    <input class="form-control" name="nickname" type="text" value="{$info.nickname}"
+                                           required="required"/>
+                                </div>
+                                <div class="col-sm-3">
+                                    <label>用户密码</label>
+                                    <input class="form-control" name="password" type="text" value="{$info.password}"
+                                           disabled="disabled"/>
+                                </div>
+                                <div class="col-sm-3">
+                                    <label>用户邮箱</label>
+                                    <input class="form-control" name="email" type="text" value="{$info.email}"
+                                           required="required"/>
+                                </div>
+                                <div class="col-sm-3">
+                                    <label>用户登录时间</label>
+                                    <input class="form-control" name="last" type="text" value="{$info.lastime}"
+                                           disabled="disabled"/>
+                                </div>
+                                <div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="height: 10px;width: 100%"></div>
+                        <!--中间行-->
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">用户感兴趣比赛类型</label>
+                                        <label class="font-primary" style="color:lightskyblue; text-align:right; margin-top:10px">
+                                            (添加兴趣时请把相应的主兴趣添加,否则将无法生效)</label>
+                                </div>
+
+                                <foreach name="type" item="v1" key="k1">
+                                    <div class="form-group">
+
+                                        <div class="col-sm-offset-3 col-sm-9">
+                                            <if condition="$v1['level'] eq 2">
+                                                <label class="checkbox-inline">
+                                                    <input type="checkbox" name="pri[]"
+                                                           value="{$v1['typeid']}"/> {$v1['typename']}(子分类)
+                                                </label>
+                                            </if>
+                                        </div>
+                                        <div class="col-sm-offset-1 col-sm-9">
+                                            <if condition="$v1['pid'] eq NULL">
+                                                <div class="pribox"><input type="checkbox"  name="pri[]" value="{$v1['typeid']}"/>  {$v1['typename']}(普通分类)</div>
+                                            </if>
+                                        </div>
+                                    </div>
+                                </foreach>
+                            </div>
+                        </div>
+                        <div style="height: 30px;width: 100%"></div>
+                        <!--提交行-->
+                        <div class="row">
+                            <div class="col-sm-2 pull-right">
+                                <button class="btn btn-success" type="button" onclick="history.go(-1)">返回</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+</div>
+<div  class="navbar-fixed-bottom'" th:replace="admin/_fragments::footer"></div>
+<script>
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+
+    $('.ui.dropdown').dropdown({
+        on: 'hover'
+    });
+
+    //消息提示关闭初始化
+    $('.message .close')
+        .on('click',function(){
+            $(this)
+                .closest('.message')
+                .transition('fade');
+        });
+</script>
+</body>
+</html>

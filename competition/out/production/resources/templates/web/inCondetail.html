@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>校内比赛首页</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- Bootstrap -->
+    <!--<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>-->
+    <link rel="stylesheet" href="/css/xnxq.css"/>
+    <link rel="stylesheet" href="/css/date.css"/>
+    <link rel="stylesheet" href="/styles/barstyle.css"/>
+
+    <style type="text/css">
+        .content{background-image: url('/gimages/xnbg.png');background-repeat: no-repeat}
+    </style>
+</head>
+<body>
+<div class="gotop">
+    <a href="#top"><img src="/gimages/top.png"/></a>
+    <div class="shareicon">
+        <h4>分享</h4>
+        <img src="/gimages/wx.png" width="30px"  height="30px"></img>
+        <!--<img src="gimages/wx.png" width="30px",height="30px"></img>-->
+        <img src="/gimages/qq.png" width="30px"  height="30px"></img>
+        <img src="/gimages/kj.png" width="30px"  height="30px"></img>
+        <img src="/gimages/wb.png" width="30px"  height="30px"></img>
+    </div>
+</div>
+<!--导航-->
+<div class="nav-box" th:replace="_fragments::menu(2)">
+    <div class="container">
+        <div class="logo"><img src="/gimages/logo.png" width="100%" height="100%"/></div>
+        <div class="navbar">
+            <ul class="navbar-nav">
+                <li><a href="webindex.html">首页</a></li>
+                <li class="active"><a href="xnsy.html">校内比赛</a></li>
+                <li><a href="xwsy.html">校外比赛</a></li>
+                <li><a href="sh.html">组队社区</a></li>
+                <li><a href="#">推荐比赛</a></li>
+            </ul></div>
+        <form class="form-search">
+            <div class="search">
+                <input class="input-search" type="text" /> <button type="submit" class="search-btn"><img src="gimages/search.png" width="32px" height="32px"/></button>
+            </div>
+        </form>
+        <a href="admin/login.html" class='adminlogin'>后台管理入口</a>
+        <div class="login relogin">
+            <!--  <span class="welcome">欢迎您</span>
+            <.html if($_SESSION['loginFlag']):?>
+            <a href="doAction.html?act=userOut" class="l3">[退出]</a>
+              <span class="people"><a href="gerenzhuye.html" class="usercenter"><.html echo $_SESSION['username'];?></a></span>
+            <.html else:?> -->
+            <div class="l1"><a href="log.html">登录</a></div>
+            <div class="l2"><a href="register.html">注册</a></div>
+            <!--  <a href="log.html" >[登录]</a><a href="register.html">[免费注册]</a> -->
+
+        </div>
+    </div>
+</div><!--导航-->
+
+<div class="clean"></div>
+
+<div class="content" ><!--主体-->
+    <div class="container">
+        <div class="up">
+            <div class="upitem">
+                <img src="/gimages/item.png" th:src="${contests.picurl}" width="308.4px" height="320px"/>
+                <div class="icon">
+                    <div class="red-icon"><img src="/gimages/icon1.png" width="18px" height="18px"/><a href="#">12</a></div>
+                    <div class="red-icon"><img src="/gimages/icon2.png" width="18px" height="18px"/><a href="#">32</a></div>
+                    <div class="red-icon"><img src="/gimages/icon3.png" width="18px" height="18px"/><a href="#">10</a></div>
+                    <div class="red-icon"><img src="/gimages/icon4.png" width="18px" height="18px"/><a href="#">6</a></div>
+                </div>
+            </div>
+            <div class="upitem">
+                <h3 th:text="${contests.title}">美柚手机app主题界面设计大赛</h3>
+                <p th:text="${contests.shortdesc}">用你的神来之笔粉刷她们的菜单栏，带上你对女性的美好想象装扮他们的手机界面。只要你的设计贴合没有品牌形象，击中她们的爱美小心脏，你就是女儿国的颜值担当！</p>
+                <div class="shm"><img src="/gimages/mark.png" width="25px" height="25px"/><h5>比赛说明:</h5></div>
+                <br/><p>美柚APP主题皮肤设计；<br/>初赛：导航栏+背景+图标+整体界面组合设计；<br/>入围：应用主要界面+宣传图；
+                <br/><br/>发起方：美柚app<br/><br/>承办方：UI中国</p>
+            </div>
+            <div class="upitem">
+                <div class="grade">
+                    <div class="shm"><img src="/gimages/grade.png" width="30px" height="30px"/><h3>比赛奖项</h3></div>
+                    <!--<br/><p>一等奖（1名）<br/>-->
+                    <!--二等奖（2名）<br/>-->
+                    <!--三等奖（3名）<br/>-->
+                    <!--优胜奖（10名）<br/>-->
+                    <!--人气奖（1名）</p>-->
+                </div>
+                <div class="grade"><div class="shm"><img src="/gimages/reward.png" width="30px" height="30px"/><h3>比赛奖品</h3></div>
+
+                    <!--<br/><p>MacBook Pro<br/>-->
+                        <!--MacBook Air<br/>-->
+                        <!--1000元<br/>-->
+                        <!--500元<br/>-->
+                        <!--Mac With Retina </p>-->
+                </div>
+                <div style="margin-bottom:-120px; padding-top:30px">
+                    <span th:utext="${contests.awards}"></span>
+                </div>
+
+
+                <div class="bm-btn"><a href="#">报名</a></div>
+            </div>
+        </div>
+        <div class="clean"></div>
+        <img class="xqimg" src="/gimages/xq.png"/>
+        <div class="middle">
+            <div class="midtext">
+                <div class="text-item">
+                    <img src="/gimages/tag.png" width="30px" height="30px"/><h3>大赛引言</h3><div class="clean"></div><br/>
+                    <p>好用从来不是女生检验APP的唯一标准，好看才是！讨厌一成不变的「好设之徒」们，快来方寸之间大显身手，为亿万女生换新妆。用你的神来之笔粉刷她们
+                        的菜单栏，带上你对女人的美好想象装扮她们的手机界面。只要你的设计贴合美柚的品牌形象，击中她们爱美的小心脏，你就是女儿国里的颜值担当！一个女
+                        人扎堆的世界，需要斑斓的主题，点缀一亿用户的眼球，将会因为你的宠幸更加动人，欢迎来稿，给她们点颜色瞧瞧！</p>
+                </div>
+                <div class="text-item">
+                    <img src="/gimages/tag.png" width="30px" height="30px"/><h3>大赛时间</h3><div class="clean"></div><br/>
+                    <p>初赛<br/>
+                        初赛作品提交：2016年8月14日 – 2016年9月5日<br/>
+                        初赛作品评选：2016年9月6日 – 2016年9月7日<br/>
+                        入围作品公示：2016年9月8日<br/>
+                        决赛<br/>
+                        决赛作品补全：2016年9月9日 – 2016年9月19日<br/>
+                        决赛作品评选：2016年9月20日 – 2016年9月22日<br/>
+                        最终大奖公示：2016年9月23日</p>
+                </div>
+                <div class="text-item">
+                    <img src="/gimages/tag.png" width="30px" height="30px"/><h3>大赛要求</h3><div class="clean"></div><br/>
+                    <p>1、参赛者只需负责设计，获奖者作品由主办方负责切图上线。<br/>
+                        2、初赛阶段参赛者只需提供首页设计图，入围的参赛者需补全剩余设计（具体见设计说明）。<br/>
+                        3、作者需要保留作品的源文件，包括PSD、图标、背景等设计元素，独立分层，可单独提取使用；入围的参赛作者需在公布入围名单后发送PSD有效分层源文件至邮箱：meiyou_ued@foxmail.com<br/>
+                        4、上传参赛作品时请使用本次活动专用模板，在图片上传项中选择上传主题展示图，便于主题更好的传播和推荐。图片格式:jpg/gif/jpeg/png。<br/>
+                        5、 所有主题作品必须为原创，并达到一定的艺术美化要求，有创意、够风格，设计细节丰富，符合女性用户的审美要求，能充分贴合美柚的品牌形象，作品的表现手法不限。<br/>
+                        6、 本次大赛设计规范详细内容可下载附件“方寸世界 由你改变 - 美柚首届手机主题大赛设计模板”。</p>
+                </div>
+                <div class="text-item">
+                    <img src="/gimages/tag.png" width="30px" height="30px"/><h3>参赛须知</h3><div class="clean"></div><br/>
+                    <p>1、参赛者在提交作品前请确保已经阅读并且愿意遵守相关比赛规则，任何违反比赛规则的作品，主办方有权取消其参赛资格。<br/>
+                        2、参赛者所提交的作品必须由参赛者本人创作或参与创作，并确认拥有所提交作品的完整著作权及版权，参赛者应确认其作品的原创性，主办单位不承担因作品侵犯他人（或单位）的权利<br/>
+                        3、参赛者须确认如多人合作，需征得所有合作者同意并标明所有合作者姓名。<br/>
+                        4、参赛期间，参赛者不得将参赛作品转让或授权给任何第三方，不得用参赛作品参与与本赛事相同或类似的其他活动。<br/>
+                        5、同一用户名可上传多组不同参赛作品，评选结果以作品为单位，即同一用户名可获得多个奖项。<br/>
+                        6、为保证本次赛事活动的公平公正，主办方在职员工参赛一律不参与评奖。<br/>
+                        7、在大赛征集期间如有任何疑议可加QQ群：386239102；或发送相关材料至meiyou_ued@foxmail.com<br/>
+                        8、所有参赛作品不得添加任何与本次大赛无关的第三方LOGO。</p>
+                </div>
+                <div class="text-item">
+                    <img src="/gimages/tag.png" width="30px" height="30px"/><h3>评审标准</h3><div class="clean"></div><br/>
+                    <p>评审将基于但不限于以下标准<br/>
+                        1、独特性：有独树一帜的设计创意和风格，让人眼前一亮。<br/>
+                        2、表现力：艺术手法有感染力，具备强烈的视觉效果，能够完美地表达设计创意。<br/>
+                        3、易用性：信息传递准确，符合使用逻辑和习惯，能带来较好的用户体验。<br/>
+                        4、规范性：作品内容完整，完成度高，符合美柚提供的设计规范，适用美柚APP的操作界面。</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="clean"></div>
+        <div class="down">
+            <div id="qq">
+                <p>元芳，你怎么看？</p>
+                <div class="message" contenteditable="true"></div>
+
+                <div class="But">
+                    <img src="/gimages/3.gif" class="bq"/>
+                    <span class="submit">发表</span>
+                    <!--face begin-->
+                    <div class="face">
+                        <ul>
+                            <li>
+                                <img src="/gimages/1.gif" title="[织]"></img>
+                            </li>
+                            <li>
+                                <img src="/gimages/2.gif" title="[织]"></img>
+                            </li>
+                            <li>
+                                <img src="/gimages/3.gif" title="[织]"></img>
+                            </li>
+                            <li>
+                                <img src="/gimages/4.gif" title="[织]"></img>
+                            </li>
+                            <li>
+                                <img src="/gimages/5.gif" title="[织]"></img>
+                            </li>
+                            <li>
+                                <img src="/gimages/6.gif" title="[织]"></img>
+                            </li>
+                            <li>
+                                <img src="/gimages/7.gif" title="[织]"></img>
+                            </li>
+                            <li>
+                                <img src="/gimages/8.gif" title="[织]"></img>
+                            </li>
+                            <li>
+                                <img src="/gimages/9.gif" title="[织]"></img>
+                            </li>
+                            <li>
+                                <img src="/gimages/10.gif" title="[织]"></img>
+                            </li>
+                            <li>
+                                <img src="/gimages/11.gif" title="[织]"></img>
+                            </li>
+                            <li>
+                                <img src="/gimages/12.gif" title="[织]"></img>
+                            </li>
+                            <li>
+                                <img src="/gimages/13.gif" title="[织]"></img>
+                            </li>
+                            <li>
+                                <img src="/gimages/14.gif" title="[织]"></img>
+                            </li>
+                            <li>
+                                <img src="/gimages/15.gif" title="[织]"></img>
+                            </li>
+                            <li>
+                                <img src="/gimages/16.gif" title="[织]"></img>
+                            </li>
+                            <li>
+                                <img src="/gimages/17.gif" title="[织]"></img>
+                            </li>
+                            <li>
+                                <img src="/gimages/18.gif" title="[织]"></img>
+                            </li>
+                            <li>
+                                <img src="/gimages/19.gif" title="[织]"></img>
+                            </li>
+                            <li>
+                                <img src="/gimages/20.gif" title="[织]"></img>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <!--face end-->
+                </div>
+            </div>
+            <!--qq end-->
+            <div id="time1"></div>
+            <!--msgCon begin-->
+            <div class="msgCon">
+            </div>
+        </div>
+    </div><!--container-->
+</div><!--content-->
+<footer>
+    <div class="container">
+        <div class="foot">
+            <a href="#">合作推广</a>
+            <a href="#">关于我们</a>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!-- <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>-->
+<script src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/date.js"></script>
+<script type="text/javascript">
+
+    //点击小图片，显示表情
+    $(".bq").click(function(e){
+        $(".face").slideDown();//慢慢向下展开
+        e.stopPropagation();   //阻止冒泡事件
+    });
+
+    //在桌面任意地方点击，他是关闭
+    $(document).click(function(){
+        $(".face").slideUp();//慢慢向上收
+    });
+
+    //点击小图标时，添加功能
+    $(".face ul li").click(function(){
+        var simg=$(this).find("img").clone();
+        $(".message").append(simg);
+    });
+
+    //点击发表按扭，发表内容
+    $("span.submit").click(function(){
+
+        var txt=$(".message").html();
+        if(txt==""){
+            $('.message').focus();//自动获取焦点
+            return;
+        }
+
+        $(".msgCon").prepend("<div class='msgBox'><dl><dt><img src='/gimages/head.gif' width='50' height='50'/></dt><dd>神马都是浮云</dd></dl><div class='msgTxt'>"+txt+"</div></div>");
+    });
+
+</script>
+
+</body>
+</html>

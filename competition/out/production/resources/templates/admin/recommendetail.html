@@ -1,0 +1,109 @@
+<style>
+    .social-avatar .media-body a {
+        display: inline-block;
+    }
+    .pull-left{margin-top: 10px;}
+    .pull-left label{font-size: 15px}
+</style>
+<div class="wrapper wrapper-content animated fadeInDown">
+    <div class="ibox-content m-b-sm border-bottom">
+        <div class="row">
+            <a href="__CONTROLLER__/recommendlst<?php echo $_GET['type']?'/type/'.$_GET['type']:'';?>">
+                <div class="col-sm-11 p-xs">
+                    <div class="pull-left m-r-md">
+                         <i class="fa fa-sitemap text-navy mid-icon"></i> 
+                    </div>
+                    <h2>用户推荐比赛信息详情</h2>
+                    <span>点击此处回到上一页</span>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content" style="padding-left: 100px;">
+
+                    <div class="small m-b-xs">
+                            <h2>{$info.username}</h2>
+                        <if condition="empty($info[email]) neq true">
+
+                             <br/> 
+                             <span>
+                             <i class="fa fa-envelope-o"></i> {$info.email} |
+                             </span>   
+                        <else />
+                             <br/> 
+                             <span>
+                             <i class="fa fa-envelope-o"></i> <span>用户没有填写邮箱</span> |
+                             </span> 
+                        </if>
+                        
+                        <span class="text-muted">
+                        <i class="fa fa-clock-o"></i> {$info.createtime}
+                        </span>
+                        <if condition="$info.ispass eq '1'">
+                            <span class="label label-success">审核通过</span>
+                            <elseif condition="$info.ispass eq '2'"/>
+                            <span class="label label-danger">审核不通过</span>
+                        </if>
+                       
+                    </div>
+                    <div class="margin-top"></div>
+                    <div class="pull-left">
+                        <label >比赛图片</label>
+                        <img  width="80%" alt="{$info.title}" class="img-responsive bookimg" src="__ROOT__/{$info.picurl}">
+                    </div>
+                    <br/>
+                    <div style="clear: both"></div>
+                    <div class="pull-left">
+                        <label>比赛标题: </label>
+                        <span>{$info.content}</span>
+                    </div>
+                    <br/>
+                   <div style="clear: both"></div>
+                    <div class="pull-left">
+                        <label>比赛范围: </label>
+                        <if condition="$info.maintype eq '1'">
+                            <span class="label label-success">校内</span>
+                            <elseif condition="$info.maintype eq '2'"/>
+                            <span class="label label-danger">校外</span>
+                        </if>
+                    </div>
+                    <div style="clear: both"></div>
+                    <div class="pull-left">
+                        <label>比赛类型: </label>
+                       <span>{$type.typename}</span>
+                    </div>
+                    <div style="clear: both"></div>
+                    <div class="pull-left">
+                        <label>比赛文档(点击下载文件)： </label>
+                        <a href="__ROOT__/{$info.texturl}">比赛文档信息</a>
+                    </div>
+                    <div style="clear: both"></div>
+                    <div class="pull-left">
+                        <label>比赛说明内容： </label>
+                       <span>{$info.content}</span>
+                    </div>
+                    <div style="clear: both"></div>
+                    <div class="pull-right">
+                        <h3>管理员进行处理: </h3>
+                        <a href="__ACTION__/id/{$info.id}/action/1">
+                            <button class="btn btn-success btn-xs" type="button">审核通过</button>
+                        </a>
+                        <a href="__ACTION__/id/{$info.id}/action/2">
+                            <button class="btn btn-danger btn-xs" type="button">审核不通过</button>
+                        </a>
+                    </div>
+                    <div style="clear: both"></div>
+
+                </div>
+            </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+</div>

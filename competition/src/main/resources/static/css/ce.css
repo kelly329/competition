@@ -1,0 +1,48 @@
+.ceshi{
+    width:15%;
+    background-color: yellowgreen;
+    margin:0 10px;
+    float:left;
+}
+.ce{
+    
+    text-indent: 40px;
+    width:80%;
+    height:33px;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin:10px 10px;
+    text-align: left;
+    line-height: 33px;
+    color:#fff;
+    font-size: 16px;
+    border-radius: 10px;
+    font-family:"微软雅黑", Helvetica Neue, Helvetica, Arial, sans-serif; 
+}
+.cl{
+    background-color: rgba(255, 255, 255, 0.5);
+    padding:4px 4px;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    top:-36px;
+    left:18px;
+}
+input{
+    width:250px;
+    height:30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border:1px solid green;
+    border-radius: 5px;
+    position:fixed;
+    text-indent: 10px;
+    top:24px;
+    left:130px;
+
+}
+.biao1{
+    margin:5px 5px;
+    padding:5px 5px;
+    font-size: 24px;
+    font-weight: bolder;
+    font-family:"微软雅黑", Helvetica Neue, Helvetica, Arial, sans-serif; 
+}

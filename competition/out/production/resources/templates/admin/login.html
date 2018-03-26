@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<title>比赛信息推荐网后台登录</title>
+<meta name="author" content="DeathGhost" />
+<link rel="stylesheet" type="text/css" href="/admin/loginjs/style.css" />
+<style>
+body{height:100%;background:#16a085;overflow:hidden;}
+canvas{z-index:-1;position:absolute;}
+</style>
+<script src="/admin/loginjs/jquery.js"></script>
+<script src="/admin/loginjs/verificationNumbers.js"></script>
+<script src="/admin/loginjs/Particleground.js"></script>
+<script>
+$(document).ready(function() {
+  //粒子背景特效
+  $('body').particleground({
+    dotColor: '#5cbdaa',
+    lineColor: '#5cbdaa'
+  });
+  //验证码
+  createCode();
+  //测试提交，对接程序删除即可
+  $(".submit_btn").click(function(){
+	  location.href="login.html";
+	  });
+});
+</script>
+</head>
+<body>
+<form method="post" action="#" th:action="@{/admin/login}">
+<dl class="admin_login">
+ <dt>
+  <strong>比赛信息推荐网管理系统</strong>
+  <em>Management System</em>
+ </dt>
+ <dd class="user_icon">
+  <input type="text" name="username" placeholder="账号" class="login_txtbx" required="required"/>
+ </dd>
+ <dd class="pwd_icon">
+  <input type="password" name="password" placeholder="密码" class="login_txtbx" required="required"/>
+ </dd>
+ <dd>
+  <input type="submit" value="立即登陆" class="submit_btn"/>
+
+
+ </dd>
+ <dd>
+  <p>© 2017-2018 CCIR团队版权所有</p>
+     <p style="color:#ccc">当前版本号 :  1.0 Beta (Build c69c62ec97)</p>
+
+ </dd>
+</dl>
+</form>
+<p style="color:#ccc;bottom: 0px;text-align: center;margin-top: 120px">为了更好地使用,本系统建议使用Opera,Chorme,Edge,Firefox浏览器。</p>
+</body>
+</html>

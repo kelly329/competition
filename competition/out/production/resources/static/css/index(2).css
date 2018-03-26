@@ -1,0 +1,207 @@
+#left1{
+    width:65%;
+    height:auto;
+    background-color: #fff;
+    float:left;
+    margin-left: 2.5%;
+    margin-bottom:30px; 
+}
+/*#left1:hover{
+    box-shadow:0 0 20px #000;
+}*/
+#right1{
+    width:25%;
+    height:auto;
+    background-color: #fff;
+    float:right;
+    margin-right: 2.5%;
+    margin-bottom: 20px;
+}
+/*
+#right1:hover{
+    box-shadow:0 0 20px #000;
+
+}*/
+.m{
+    width:91.5%;
+    height:auto;
+    background-color: #fff;
+    float:left;
+    margin-left: 2.5%;
+    margin-bottom: 30px;
+    padding:15px 20px; 
+}
+.boxgrid{
+    width:31%;/*325px*/
+    height:260px;
+    margin-left:17px;
+    float:left;
+    background:#161613;
+    border:solid 1px #eee;
+    overflow:hidden;
+    position:relative;
+}
+.boxgrid a{color:#C8DCE5;}
+.boxgrid h3{
+    margin:10px 10px 10px 10px;
+    color:#FFF;
+    font:18pt Arial, sans-serif;
+    letter-spacing:-1px;
+    font-weight:bold;
+}
+.boxgrid img{
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    border:0;
+}
+.boxgrid p{
+    padding:0 10px;
+    color:#afafaf;
+    font-weight:bold;
+    font:10pt "Lucida Grande", Arial, sans-serif;
+}     
+.boxcaption{
+    float:left;
+    position:absolute;
+    background:#000;
+    height:100px;
+    width:100%;
+    opacity:.8;
+    /* For IE 5-7 */
+    filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+    /* For IE 8 */
+    -MS-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+}
+.captionfull .boxcaption{
+    top:260px;
+    left:0px;
+}
+
+/*.m:hover {
+    box-shadow:0 0 20px #000;
+}*/
+.kuai2{
+    width:100%;
+    height:auto;
+    background-color: #fff;
+    float:left;
+    margin:10px 0;
+    margin:auto;
+}
+.xiaokuai{
+    width:45%;
+    height:50%;
+    background-color:#eee;
+    margin:15px 19px;
+    float:left;
+}
+.z1>a{
+    color:#000;
+}
+.z1{
+    font-size: 16px;
+    font-weight: bolder;
+    color:#000;
+    margin:auto;
+    width:100%;
+}
+
+
+.z1 img{
+    height:25px;
+    width:25px;
+    vertical-align: middle;
+}
+.z2{
+    position:relative;
+    font-size: 12px;
+    color:#000;
+    margin:0 9px;
+    float:right;
+}
+.z3{
+    font-size: 14px;
+    color:#990000;
+    margin:5px 25px;
+    font-weight:bolder;
+}
+.z4{
+    font-size: 9px;
+    color:#000;
+}
+.hangneidiv{
+    position:absolute;
+    width:25%;
+    height:20px;
+    text-indent: 50px;
+    text-overflow: ellipsis;
+    overflow: hidden; 
+    white-space:nowrap;
+}
+.icon1{
+    width:50%;
+    text-align:right;
+    margin:40px 25px;
+}
+.icon1 img{
+    width:20px;
+    height:20px;
+    cursor:pointer;
+}
+.xiaokuaitupian img{
+    width:100%;
+    height:200px;
+}
+.more{
+    float:right;
+    cursor:pointer;
+    text-decoration: underline;
+    font-weight: bolder;
+    font-size: 12px;
+    margin:10px 10px;
+        padding: 5px;
+}
+.more>a{color: #B54646;}
+.rightkuai2{
+    margin:10px 10px;
+    width:93%;
+    height:auto;
+}
+.rightkuai{
+    margin:10px 10px;
+    width:93%;
+    height:auto;
+    border-top: 1px solid #990000;
+}
+.rightkuai1{
+    margin:5px 10px;
+    float:left;
+    font-size:9px;
+    padding:5px 5px;
+    border-radius: 5px;
+    background-color:#eee;
+}
+.rightkuai1:hover{
+    font-weight: bolder;
+}
+.rightkuai1>a{color: #990000;}
+.zi1{
+    font-size: 16px;
+    font-weight: bolder;
+    color:#000;
+    float:left;
+}
+#xianzhi{
+    width:80%;
+    height:100%;
+    float:right;
+    margin:-40px 45px 25px 0;
+    text-align:left;
+    font-size:13px;
+    color: #535353;
+    letter-spacing:0.5px;/*间距*/
+    line-height:22px;/*行距*/
+}

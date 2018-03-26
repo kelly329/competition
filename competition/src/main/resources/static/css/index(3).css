@@ -1,0 +1,97 @@
+﻿
+/* side */
+.side{
+    position:fixed;
+    width:54px;
+    height:275px;
+    right:0;
+    top:500px;
+    z-index:100;
+    display:none;
+}
+.side ul li{
+    width:54px;
+    height:54px;
+    float:left;
+    position:relative;
+    border-bottom:1px solid #444;
+}
+.side ul li .sidebox{
+    position:absolute;
+    width:54px;
+    height:54px;
+    top:0;right:0;
+    transition:all 0.3s;
+    background:#000;
+    opacity:0.8;
+    filter:Alpha(opacity=80);
+    color:#fff;
+    font:14px/54px "微软雅黑";
+    overflow:hidden;
+}
+.side ul li .sidetop{
+    width:54px;
+    height:54px;
+    line-height:54px;
+    display:inline-block;
+    background:#000;
+    opacity:0.8;
+    filter:Alpha(opacity=80);
+    transition:all 0.3s;
+}
+.side ul li .sidetop:hover{
+    background:#ae1c1c;
+    opacity:1;
+    filter:Alpha(opacity=100);
+}
+.side ul li img{
+    float:left;
+}
+
+
+
+
+
+
+/*以下是弹出框的显示与隐藏*/
+.reveal-modal-bg { 
+    position: fixed; 
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,.8);
+    z-index: 1000;
+    display: none;
+    top: 0;
+    left: 0; 
+}
+
+.reveal-modal {
+    visibility: hidden;
+    top: 100px; 
+    left: 50%;
+    margin-left: -350px;
+    width: 620px;
+    background: #eee url(../image/modal-gloss.png) no-repeat -200px -80px;
+    position: absolute;
+    z-index: 1001;
+    padding: 30px 40px 34px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,.4);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.4);
+    -box-shadow: 0 0 10px rgba(0,0,0,.4);
+}
+.reveal-modal .close-reveal-modal {
+    font-size: 22px;
+    line-height: .5;
+    position: absolute;
+    top: 8px;
+    right: 11px;
+    color: #aaa;
+    text-shadow: 0 -1px 1px rbga(0,0,0,.6);
+    font-weight: bold;
+    cursor: pointer;
+} 
+
+

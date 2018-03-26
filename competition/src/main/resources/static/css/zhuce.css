@@ -1,0 +1,492 @@
+﻿body {
+    font-family:"微软雅黑", Helvetica Neue, Helvetica, Arial, sans-serif; 
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #333333;
+    background-color: white;
+    margin: 0;
+}
+*{margin:0;
+    padding:0;}
+a{
+    text-decoration: none;
+}
+.clean{
+   clear: both; 
+}
+
+.gotop{
+    position: fixed;
+    width: 3%;
+    height: 6%;
+    background-color: #F9F9F9;
+    right: 2%;
+    bottom: 45%;
+}     
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.container:before,
+.container:after {
+  display: table;
+  content: " ";
+}
+
+.container:after {
+  clear: both;
+}
+
+.container:before,
+.container:after {
+  display: table;
+  content: " ";
+}
+
+.container:after {
+  clear: both;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/*导航*/
+.nav-box,.navbar{
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+.logo{
+    float:left;
+    width: 11%;
+    height: 20%;
+    margin: 10px;
+}
+.navbar {
+    float: left;
+    margin: 20px;
+}
+.navbar a:hover{
+    color: #990000;
+}
+ul{
+    list-style: none;
+}
+.navbar-nav{
+    float: left;
+    margin: 0;
+}
+.navbar-nav > li + li:before {
+    float: left;
+    color: #CCCCCC;
+    content: "| ";
+    padding: 10px 0px;
+    margin-left:-10px;
+}
+.navbar-nav > li {
+    float: left;
+    margin: 10px;
+    font-size: 14px;
+}
+.navbar-nav > li > a {
+    position: relative;
+    display: block;
+    color: #555555;
+    padding: 10px 20px;
+}
+.navbar .navbar-nav > .active > a {
+    color: #990000;
+    
+}
+.navbar .navbar-nav > .active  {
+    border-top:  2px solid #990000;
+}
+.navbar-nav:after {
+    clear: both;
+}
+ .img-responsive{
+     max-width: 100%;
+     height: auto;
+}
+.form-search{
+    float:left;
+    
+}
+.search{
+    height: 35px;
+   
+    margin:30px;
+}
+.input-search {
+    float: left;
+    width: 68%;
+    display: block;
+    padding: 6px 15px;
+    font-size: 15px;
+    line-height: 1.428571429;
+    color: #555555;
+    background-color: #ccc;
+    background-image: none;
+    border: 1px solid #ccc;
+    /*border-radius: 4px;*/
+    box-shadow: none;
+}
+button {
+  display: inline-block;
+  /*padding: 6px 12px;*/
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.428571429;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+       -o-user-select: none;
+          user-select: none;
+}
+.search-btn {
+    color: #FFF;
+    background-color: #990000;
+    height: 100%;
+    text-transform: uppercase;
+    width: 16%;
+    float: right;
+    overflow: visible;
+    cursor: pointer;
+}
+.login{
+    position: relative;
+    left: 50px;
+    top: 29px;
+    width: 19%;
+    height: 36px;
+    float: right;
+}
+.login div{
+    float: left;
+    margin: 5px;
+    padding: 5px;
+    width: 30%;
+    text-align: center;
+}
+.l1{background-color: #EEEEEE;}.l1 a{color: #A12928;}
+.l2{background-color: #A12928;}.l2 a{color: #EEEEEE;}
+/*主要内容*/
+.content{
+    width: 100%;
+}
+
+/*用户注册色块*/
+.lump {
+  margin:0px;
+  position: relative;
+  height:70px;
+  width:100%;
+  background-color:#DDDDDD  ;
+}
+.lump h3{
+  position:relative;
+  margin-left:150px;
+  line-height: 70px;
+}
+/*客户注册样式*/
+.customer-reg .customer-reg-info{margin-left:150px;}
+.customer-reg .customer-reg-flow{
+    margin:70px;
+    position: relative;
+    height: 100px;
+    /*margin-bottom: 30px;*/
+    /*border-bottom: 1px solid #f4f4f4;*/
+    background-image: url("../himages/reg-tong.png");
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+.customer-reg .customer-reg-flow .customer-reg-f-num{
+    width: 480px;
+    height: 750px;
+    top: 0;
+    position: absolute;
+    background: url("../himages/reg-o.png") no-repeat center top;
+}
+.customer-reg .customer-reg-flow .customer-reg-f-num .f-num-o{
+    width: 44px;
+    height: 44px;
+    margin-top: 3px;
+    margin-left: 2px;
+    position: relative;
+    font-size: 26px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 44px;
+    font-family: "Ariai";
+    font-weight: 900;
+    background: url("../himages/reg-o.png") no-repeat center center;
+}
+.customer-reg .customer-reg-flow .customer-reg-f-num.active .f-num-o{
+    background-image: url("../himages/reg-o-hover.png");
+}
+.f-num-1{
+    left: 15%;
+}
+.f-num-2{
+    left: 47%;
+}
+.f-num-3{
+    left: 79%;
+}
+.customer-reg .customer-reg-flow .customer-reg-f-num p{
+    margin: 5px -15px 0;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    color: #868687;
+    font-size: 12px;
+}
+.customer-reg .customer-reg-flow .customer-reg-f-num.active p{
+    color: #e84e27;
+}
+.customer-reg h3.reg-success{
+    font-weight: 700;
+    color: #666666;
+    font-size: 20px;
+    margin: 10px 0 20px;
+    padding-top: 50px;
+    border-top: 1px solid #f4f4f4;
+}
+@media (max-width: 370px){
+    .customer-reg h3.reg-success{
+        font-size: 17px;
+    }
+  }
+.customer-reg-qx{
+    padding-top: 30px;
+}
+.customer-reg-qx .panel-info{
+    margin-right: -7.5px;
+}
+.customer-reg-qx .panel-primary{
+    margin-left: -7.5px;
+}
+@media (max-width: 992px){
+    .customer-reg-qx .panel-info,.customer-reg-qx .panel-primary{
+        margin: 0!important;
+    }
+    .customer-reg-qx .col-xs-12{
+        margin-bottom: 30px;
+    }
+    .iwant-pay{
+        padding: 20px 0;
+    }
+}
+ .customer-reg-qx .panel-info,.customer-reg-qx .panel-primary{
+    border-color: #f3f3f3;
+    border-radius: 0;
+}
+.customer-reg-qx .table-hover > tbody > tr{
+    background-color: #fafafa;
+}
+.customer-reg-qx .table-hover > tbody > tr:hover{
+    background-color: #f5f5f5;
+}
+.customer-reg-qx .table > tbody > tr > th,.customer-reg-qx .table > tbody > tr > td{
+    border-top: 1px solid #ffffff;
+    color: #666666;
+}
+.customer-reg-qx .table > thead > tr > th{
+    border-bottom: 2px solid #ffffff;
+}
+.customer-reg-qx .table > tbody > tr > th.text-center{
+    height: 51px;
+}
+.customer-reg-qx .table > tbody > tr > th.text-center p{
+    line-height: 34px;
+    margin: 0;
+    color: #cf2323;
+    font-size: 14px;
+}
+.customer-reg-qx .panel-info > .panel-heading{
+    color: #ffffff;
+    background-color: #3cb0c9;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+.customer-reg-qx .panel-heading .panel-title{
+    font-size: 18px;
+}
+.customer-reg-qx .panel-heading .panel-title>small{
+    margin-left: 20px;
+}
+.customer-reg-qx .panel-info .btn-info{
+    background-color: #3cb0c9;
+}
+.customer-reg-qx .panel-info .table > thead > tr > th.cc-color{
+    color: #3cb0c9;
+}
+.customer-reg-qx .panel-primary > .panel-heading{
+    color: #ffffff;
+    background-color: #0083c2;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+.customer-reg-qx .panel-primary .table > thead > tr > th.cc-color{
+    color: #0083c2;
+}
+.customer-reg-qx span.panel-qx-ture{
+    display: block;
+    margin: -2px 0 0 17px;
+    width: 22px;
+    height: 22px;
+    background: url("../images/icons/panel-qx-ture.png") no-repeat center center;
+}
+.customer-reg-qx .table > tbody > tr > td a.btn-link{
+    color: #e4370c!important;
+    padding: 0 13px;
+}
+.customer-reg-info{
+    padding: 10px;
+    position: relative;
+}
+@media (max-width: 670px){
+    .customer-reg-info{
+        padding: 10px 0;
+    }
+    .customer-reg-treaty{
+        height: 300px;
+        overflow-x:hidden;
+        overflow-y:auto; 
+    }
+}
+.customer-reg-infotitle{
+    border-bottom: 1px dashed #e0e0e0;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+.customer-reg-fengexian{
+    height: 1px;
+    width: 100%;
+    border-bottom: 1px dashed #e0e0e0;
+    margin: 20px 0;
+}
+.customer-reg-infotitle.no-border{
+    border: none!important;
+    margin-bottom: 0;
+}
+.no-border{
+    border: none!important;
+}
+.customer-reg-infotitle h3{
+    color: #990000;
+    font-weight: 700;
+}
+.customer-reg-infotitle p{
+    font-size: 12px;
+    line-height: 24px;
+    color: #575f65;
+}
+.customer-reg-infotitle p.customer-reg-infotitle-title{
+    line-height: 18px;
+    margin-bottom: 20px;
+}
+.customer-reg-treaty{
+    background-color: #F5F5F5;
+    padding: 20px;
+}
+.customer-reg-treaty p{
+    line-height: 24px;
+    font-size: 14px;
+    color: #444444;
+}
+.customer-reg-form .form-horizontal .control-label,.retrieve-password-form .form-horizontal .control-label{
+    text-align: left;
+    color: #575f65;
+}
+.customer-reg-form .form-horizontal .control-label.text-right{
+    text-align: right;
+}
+@media (min-width: 998px){
+    .customer-reg .col-sm-2 {
+        width: 12.66666667%;
+    }
+    .customer-reg .col-sm-offset-2{
+        margin-left: 12.66666667%;
+    }
+    .iwant-pay .col-sm-2{
+        width: 16.66666667%;
+    }
+}
+.customer-reg-form .radio-inline, .customer-reg-form .checkbox-inline{
+    padding-left: 0;
+    margin-right: 10px;
+    margin-left: 0!important;
+}
+.customer-reg-form .heng-ge{
+    margin: 40px 0 40px 0;
+    border-bottom: 1px dashed #e0e0e0;
+}
+
+.customer-reg .customer-reg-flow .customer-reg-f-num{
+  width:48px;
+  height:75px;
+  top:0;
+  position:absolute;
+  background:url("../himages/reg-all.png") no-repeat center top;
+}
+.inter-btn>a{text-decoration: none;color: #fff;
+    font-weight: 700;}
+.inter-btn{
+    margin: 30px 0;
+    padding: 5px;
+    background-color: #A12928;
+    
+    width: 100px;
+} 
+
+/*footer*/
+footer{
+    width: 100%;
+    overflow-y: auto;
+    position: relative;
+    padding: 3% 0 1%;
+    background: url("../himages/bg2.png") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.images/psimg/reg-log-bg.jpg', sizingMethod='scale');
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/psimg/reg-log-bg.jpg', sizingMethod='scale')";
+}
+footer .container ul {position: relative;}
+footer .container ul li{
+    list-style: none; text-align: center;padding:0px 150px;float:left;
+}
+footer .container ul li a{color:white;list-style:none;}
+
